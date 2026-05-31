@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import JobCategories from "./components/JobCategories";
+import FeaturedJobs from "./components/FeaturedJobs";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <JobCategories />
+      <FeaturedJobs />
     </>
   );
 }
