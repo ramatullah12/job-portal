@@ -1,10 +1,7 @@
+import Home from "./pages/Home";
+
 function App() {
-  return (
-    <div>
-      <h1>CareerHub</h1>
-      <p>Find Your Dream Job</p>
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
