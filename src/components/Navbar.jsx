@@ -16,8 +16,8 @@ function Navbar() {
           CareerHub
         </Link>
 
-        {/* Menu */}
-        <ul className="hidden md:flex gap-8 font-medium items-center">
+        {/* Navigation */}
+        <ul className="hidden md:flex items-center gap-8 font-medium">
 
           <li>
             <Link
@@ -34,6 +34,15 @@ function Navbar() {
               className="hover:text-blue-600 transition"
             >
               Jobs
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/dashboard"
+              className="hover:text-blue-600 transition"
+            >
+              Dashboard
             </Link>
           </li>
 
@@ -72,8 +81,8 @@ function Navbar() {
 
         </ul>
 
-        {/* Auth Buttons */}
-        <div className="flex gap-3">
+        {/* Buttons */}
+        <div className="flex items-center gap-3">
 
           <Link
             to="/login"
