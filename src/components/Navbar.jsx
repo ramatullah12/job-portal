@@ -4,9 +4,9 @@ import { useApplications } from "../context/ApplicationContext";
 import { useTheme } from "../context/ThemeContext";
 
 function Navbar() {
-  const { bookmarks } = useBookmarks();
-  const { applications } = useApplications();
-  const { darkMode, setDarkMode } = useTheme();
+  const { bookmarks = [] } = useBookmarks();
+  const { applications = [] } = useApplications();
+  const { darkMode, toggleTheme } = useTheme();
 
   return (
     <nav className="bg-white dark:bg-slate-900 border-b dark:border-slate-700 shadow-sm sticky top-0 z-50">
@@ -57,7 +57,7 @@ function Navbar() {
             >
               Applications
 
-              {applications?.length > 0 && (
+              {applications.length > 0 && (
                 <span className="absolute -top-2 -right-5 bg-green-600 text-white text-xs px-2 py-0.5 rounded-full">
                   {applications.length}
                 </span>
@@ -72,7 +72,7 @@ function Navbar() {
             >
               Saved Jobs
 
-              {bookmarks?.length > 0 && (
+              {bookmarks.length > 0 && (
                 <span className="absolute -top-2 -right-5 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
                   {bookmarks.length}
                 </span>
@@ -100,13 +100,13 @@ function Navbar() {
 
         </ul>
 
-        {/* Right Section */}
+        {/* Right Menu */}
         <div className="flex items-center gap-3">
 
-          {/* Dark Mode */}
+          {/* Dark Mode Toggle */}
           <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="px-3 py-2 rounded-lg border dark:border-slate-600 hover:bg-gray-100 dark:hover:bg-slate-700 transition"
+            onClick={toggleTheme}
+            className="px-3 py-2 rounded-lg border border-gray-300 dark:border-slate-600 hover:bg-gray-100 dark:hover:bg-slate-700 transition"
           >
             {darkMode ? "☀️" : "🌙"}
           </button>
@@ -114,7 +114,7 @@ function Navbar() {
           {/* Login */}
           <Link
             to="/login"
-            className="px-4 py-2 rounded-lg border dark:border-slate-600 hover:bg-gray-100 dark:hover:bg-slate-700 dark:text-white transition"
+            className="px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 hover:bg-gray-100 dark:hover:bg-slate-700 dark:text-white transition"
           >
             Login
           </Link>
