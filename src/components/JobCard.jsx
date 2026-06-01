@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useBookmarks } from "../context/BookmarkContext";
 
 function JobCard({ job }) {
+  const { addBookmark } = useBookmarks();
+
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
 
@@ -20,13 +23,24 @@ function JobCard({ job }) {
         📍 {job.location}
       </p>
 
-      <Link
-        to={`/jobs/${job.slug}`}
-        state={{ job }}
-        className="block mt-5 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700"
-      >
-        View Details
-      </Link>
+      <div className="flex gap-2 mt-5">
+
+        <Link
+          to={`/jobs/${job.slug}`}
+          state={{ job }}
+          className="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg"
+        >
+          View Details
+        </Link>
+
+        <button
+          onClick={() => addBookmark(job)}
+          className="px-4 rounded-lg border"
+        >
+          ❤️
+        </button>
+
+      </div>
 
     </div>
   );

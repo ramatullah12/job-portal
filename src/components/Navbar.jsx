@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useBookmarks } from "../context/BookmarkContext";
 
 function Navbar() {
+  const { bookmarks } = useBookmarks();
+
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -12,7 +15,8 @@ function Navbar() {
           CareerHub
         </Link>
 
-        <ul className="hidden md:flex gap-8 font-medium">
+        <ul className="hidden md:flex gap-8 font-medium items-center">
+
           <li>
             <Link
               to="/"
@@ -28,6 +32,21 @@ function Navbar() {
               className="hover:text-blue-600 transition"
             >
               Jobs
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/bookmarks"
+              className="hover:text-blue-600 transition relative"
+            >
+              Saved Jobs
+
+              {bookmarks.length > 0 && (
+                <span className="absolute -top-2 -right-5 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+                  {bookmarks.length}
+                </span>
+              )}
             </Link>
           </li>
 
@@ -48,6 +67,7 @@ function Navbar() {
               About
             </a>
           </li>
+
         </ul>
 
         <div className="flex gap-3">
