@@ -8,16 +8,22 @@ function FeaturedJobs() {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchJobs = async () => {
       try {
         const data = await getJobs();
 
+        if (!Array.isArray(data)) {
+          throw new Error("Invalid API response");
+        }
+
         setJobs(data);
         setFilteredJobs(data);
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load jobs");
       } finally {
         setLoading(false);
       }
@@ -28,7 +34,9 @@ function FeaturedJobs() {
 
   useEffect(() => {
     const result = jobs.filter((job) =>
-      job.title.toLowerCase().includes(searchTerm.toLowerCase())
+      (job.title || "")
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
     );
 
     setFilteredJobs(result);
@@ -38,6 +46,14 @@ function FeaturedJobs() {
     return (
       <div className="text-center py-20">
         Loading jobs...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-20 text-red-500">
+        {error}
       </div>
     );
   }
@@ -62,7 +78,7 @@ function FeaturedJobs() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredJobs.slice(0, 12).map((job) => (
             <JobCard
-              key={job.slug}
+              key={job.slug || job.id}
               job={job}
             />
           ))}

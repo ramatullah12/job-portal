@@ -1,41 +1,57 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
-    <nav className="bg-white shadow-sm border-b">
+    <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-bold text-blue-600">
-            CareerHub
-          </h1>
-        </div>
+
+        <Link
+          to="/"
+          className="text-2xl font-bold text-blue-600"
+        >
+          CareerHub
+        </Link>
 
         <ul className="hidden md:flex gap-8 font-medium">
           <li>
-            <a href="#" className="hover:text-blue-600 transition">
+            <Link
+              to="/"
+              className="hover:text-blue-600 transition"
+            >
               Home
-            </a>
+            </Link>
           </li>
 
           <li>
-            <Link to="/jobs" className="hover:text-blue-600 transition">
+            <Link
+              to="/jobs"
+              className="hover:text-blue-600 transition"
+            >
               Jobs
             </Link>
           </li>
 
           <li>
-            <a href="#" className="hover:text-blue-600 transition">
+            <a
+              href="#"
+              className="hover:text-blue-600 transition"
+            >
               Companies
             </a>
           </li>
 
           <li>
-            <a href="#" className="hover:text-blue-600 transition">
+            <a
+              href="#"
+              className="hover:text-blue-600 transition"
+            >
               About
             </a>
           </li>
         </ul>
 
         <div className="flex gap-3">
-          <button className="px-4 py-2 rounded-lg border">
+          <button className="px-4 py-2 rounded-lg border hover:bg-gray-100">
             Login
           </button>
 
@@ -43,6 +59,7 @@ function Navbar() {
             Register
           </button>
         </div>
+
       </div>
     </nav>
   );
