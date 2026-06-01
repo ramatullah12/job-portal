@@ -27,18 +27,17 @@ function Dashboard() {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+
         <div className="max-w-7xl mx-auto px-6 py-10">
 
           {/* Header */}
           <div className="mb-10">
-            <h1 className="text-4xl font-bold">
-              Welcome,
-              {" "}
-              {profile.fullName || "Candidate"} 👋
+            <h1 className="text-4xl font-bold text-slate-900 dark:text-white">
+              Welcome, {profile.fullName || "Candidate"} 👋
             </h1>
 
-            <p className="text-gray-500 mt-2">
+            <p className="text-gray-500 dark:text-gray-300 mt-2">
               Manage your career journey with CareerHub
             </p>
           </div>
@@ -46,8 +45,8 @@ function Dashboard() {
           {/* Statistics */}
           <div className="grid md:grid-cols-4 gap-6">
 
-            <div className="bg-white rounded-2xl shadow p-6">
-              <h3 className="text-gray-500">
+            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
+              <h3 className="text-gray-500 dark:text-gray-300">
                 Saved Jobs
               </h3>
 
@@ -56,8 +55,8 @@ function Dashboard() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow p-6">
-              <h3 className="text-gray-500">
+            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
+              <h3 className="text-gray-500 dark:text-gray-300">
                 Applied Jobs
               </h3>
 
@@ -66,8 +65,8 @@ function Dashboard() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow p-6">
-              <h3 className="text-gray-500">
+            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
+              <h3 className="text-gray-500 dark:text-gray-300">
                 Profile Completion
               </h3>
 
@@ -76,8 +75,8 @@ function Dashboard() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow p-6">
-              <h3 className="text-gray-500">
+            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
+              <h3 className="text-gray-500 dark:text-gray-300">
                 Resume Uploaded
               </h3>
 
@@ -89,9 +88,9 @@ function Dashboard() {
           </div>
 
           {/* Quick Actions */}
-          <div className="bg-white rounded-2xl shadow p-6 mt-8">
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mt-8">
 
-            <h2 className="text-2xl font-semibold mb-6">
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
               Quick Actions
             </h2>
 
@@ -99,28 +98,28 @@ function Dashboard() {
 
               <Link
                 to="/profile"
-                className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
+                className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition"
               >
                 Edit Profile
               </Link>
 
               <Link
                 to="/jobs"
-                className="bg-green-600 text-white px-5 py-3 rounded-lg hover:bg-green-700"
+                className="bg-green-600 text-white px-5 py-3 rounded-lg hover:bg-green-700 transition"
               >
                 Browse Jobs
               </Link>
 
               <Link
                 to="/bookmarks"
-                className="bg-purple-600 text-white px-5 py-3 rounded-lg hover:bg-purple-700"
+                className="bg-purple-600 text-white px-5 py-3 rounded-lg hover:bg-purple-700 transition"
               >
                 Saved Jobs
               </Link>
 
               <Link
                 to="/applications"
-                className="bg-orange-500 text-white px-5 py-3 rounded-lg hover:bg-orange-600"
+                className="bg-orange-500 text-white px-5 py-3 rounded-lg hover:bg-orange-600 transition"
               >
                 Applications
               </Link>
@@ -129,37 +128,39 @@ function Dashboard() {
 
           </div>
 
-          {/* Progress */}
-          <div className="bg-white rounded-2xl shadow p-6 mt-8">
+          {/* Profile Progress */}
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mt-8">
 
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
               Profile Progress
             </h2>
 
-            <div className="w-full bg-gray-200 rounded-full h-4">
+            <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-4">
+
               <div
-                className="bg-blue-600 h-4 rounded-full"
+                className="bg-blue-600 h-4 rounded-full transition-all duration-500"
                 style={{
                   width: `${profileCompleted}%`,
                 }}
               />
+
             </div>
 
-            <p className="text-sm text-gray-500 mt-3">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
               Complete your profile to increase visibility.
             </p>
 
           </div>
 
           {/* Recent Saved Jobs */}
-          <div className="bg-white rounded-2xl shadow p-6 mt-8">
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mt-8">
 
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
               Recent Saved Jobs
             </h2>
 
             {bookmarks.length === 0 ? (
-              <p className="text-gray-500">
+              <p className="text-gray-500 dark:text-gray-400">
                 No saved jobs yet.
               </p>
             ) : (
@@ -167,14 +168,14 @@ function Dashboard() {
 
                 {bookmarks.slice(0, 3).map((job) => (
                   <div
-                    key={job.slug}
-                    className="border rounded-lg p-4"
+                    key={job.slug || job.id}
+                    className="border border-gray-200 dark:border-slate-700 rounded-lg p-4"
                   >
-                    <h3 className="font-semibold">
+                    <h3 className="font-semibold text-slate-900 dark:text-white">
                       {job.title}
                     </h3>
 
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
                       {job.company_name}
                     </p>
                   </div>
@@ -186,6 +187,7 @@ function Dashboard() {
           </div>
 
         </div>
+
       </div>
 
       <Footer />
