@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function JobCard({ job }) {
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
@@ -18,14 +20,12 @@ function JobCard({ job }) {
         📍 {job.location}
       </p>
 
-      <a
-        href={job.url}
-        target="_blank"
-        rel="noreferrer"
+      <Link
+        to={`/jobs/${job.slug}`}
         className="block mt-5 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700"
       >
-        Apply Now
-      </a>
+        View Details
+      </Link>
 
     </div>
   );

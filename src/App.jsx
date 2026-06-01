@@ -1,16 +1,16 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import JobCategories from "./components/JobCategories";
-import FeaturedJobs from "./components/FeaturedJobs";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import JobDetail from "./pages/JobDetail";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <JobCategories />
-      <FeaturedJobs />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/jobs/:slug" element={<JobDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,9 +1,16 @@
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import JobCategories from "../components/JobCategories";
+import FeaturedJobs from "../components/FeaturedJobs";
+
 function Home() {
   return (
-    <div>
-      <h1>CareerHub</h1>
-      <p>Find Your Dream Job</p>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <JobCategories />
+      <FeaturedJobs />
+    </>
   );
 }
 
