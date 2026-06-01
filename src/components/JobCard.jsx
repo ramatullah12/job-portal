@@ -22,6 +22,7 @@ function JobCard({ job }) {
 
       <Link
         to={`/jobs/${job.slug}`}
+        state={{ job }}
         className="block mt-5 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700"
       >
         View Details
