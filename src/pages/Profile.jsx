@@ -17,18 +17,23 @@ function Profile() {
   const [resumeName, setResumeName] = useState("");
 
   useEffect(() => {
-    const savedProfile = localStorage.getItem("userProfile");
+    const savedProfile =
+      localStorage.getItem("userProfile");
 
     if (savedProfile) {
       setProfile(JSON.parse(savedProfile));
     }
 
-    const savedPhoto = localStorage.getItem("profilePhoto");
+    const savedPhoto =
+      localStorage.getItem("profilePhoto");
+
     if (savedPhoto) {
       setPhoto(savedPhoto);
     }
 
-    const savedResume = localStorage.getItem("resumeName");
+    const savedResume =
+      localStorage.getItem("resumeName");
+
     if (savedResume) {
       setResumeName(savedResume);
     }
@@ -50,6 +55,7 @@ function Profile() {
 
     reader.onloadend = () => {
       setPhoto(reader.result);
+
       localStorage.setItem(
         "profilePhoto",
         reader.result
@@ -87,17 +93,18 @@ function Profile() {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-slate-50 py-10">
-        <div className="max-w-5xl mx-auto px-6">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-10 transition-colors duration-300">
 
-          <h1 className="text-4xl font-bold mb-8">
+        <div className="max-w-6xl mx-auto px-6">
+
+          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-8">
             My Profile
           </h1>
 
           <div className="grid lg:grid-cols-3 gap-8">
 
             {/* Sidebar */}
-            <div className="bg-white rounded-2xl shadow p-6">
+            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
 
               <div className="flex flex-col items-center">
 
@@ -105,10 +112,10 @@ function Profile() {
                   <img
                     src={photo}
                     alt="Profile"
-                    className="w-32 h-32 rounded-full object-cover border"
+                    className="w-32 h-32 rounded-full object-cover border border-gray-300 dark:border-slate-600"
                   />
                 ) : (
-                  <div className="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center">
+                  <div className="w-32 h-32 rounded-full bg-gray-200 dark:bg-slate-700 flex items-center justify-center text-5xl">
                     👤
                   </div>
                 )}
@@ -117,22 +124,22 @@ function Profile() {
                   type="file"
                   accept="image/*"
                   onChange={handlePhotoChange}
-                  className="mt-4"
+                  className="mt-4 text-sm dark:text-white"
                 />
 
-                <h2 className="text-xl font-semibold mt-4">
+                <h2 className="text-xl font-semibold text-slate-900 dark:text-white mt-4">
                   {profile.fullName || "Your Name"}
                 </h2>
 
-                <p className="text-gray-500">
+                <p className="text-gray-500 dark:text-gray-400">
                   {profile.email || "your@email.com"}
                 </p>
 
               </div>
 
-              <hr className="my-6" />
+              <hr className="my-6 border-gray-300 dark:border-slate-700" />
 
-              <h3 className="font-semibold mb-3">
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
                 Resume
               </h3>
 
@@ -140,6 +147,7 @@ function Profile() {
                 type="file"
                 accept=".pdf"
                 onChange={handleResumeChange}
+                className="text-sm dark:text-white"
               />
 
               {resumeName && (
@@ -147,6 +155,7 @@ function Profile() {
                   Uploaded: {resumeName}
                 </p>
               )}
+
             </div>
 
             {/* Form */}
@@ -154,7 +163,7 @@ function Profile() {
 
               <form
                 onSubmit={handleSubmit}
-                className="bg-white rounded-2xl shadow p-8"
+                className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-8"
               >
 
                 <div className="grid md:grid-cols-2 gap-4">
@@ -165,7 +174,7 @@ function Profile() {
                     value={profile.fullName}
                     onChange={handleChange}
                     placeholder="Full Name"
-                    className="border rounded-lg p-3"
+                    className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3"
                   />
 
                   <input
@@ -174,7 +183,7 @@ function Profile() {
                     value={profile.email}
                     onChange={handleChange}
                     placeholder="Email"
-                    className="border rounded-lg p-3"
+                    className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3"
                   />
 
                   <input
@@ -183,7 +192,7 @@ function Profile() {
                     value={profile.phone}
                     onChange={handleChange}
                     placeholder="Phone Number"
-                    className="border rounded-lg p-3"
+                    className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3"
                   />
 
                   <input
@@ -192,7 +201,7 @@ function Profile() {
                     value={profile.location}
                     onChange={handleChange}
                     placeholder="Location"
-                    className="border rounded-lg p-3"
+                    className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3"
                   />
 
                 </div>
@@ -201,8 +210,8 @@ function Profile() {
                   name="skills"
                   value={profile.skills}
                   onChange={handleChange}
-                  placeholder="Skills"
-                  className="border rounded-lg p-3 mt-4 w-full"
+                  placeholder="Skills (React, Laravel, JavaScript)"
+                  className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3 mt-4 w-full"
                   rows="3"
                 />
 
@@ -211,7 +220,7 @@ function Profile() {
                   value={profile.experience}
                   onChange={handleChange}
                   placeholder="Work Experience"
-                  className="border rounded-lg p-3 mt-4 w-full"
+                  className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3 mt-4 w-full"
                   rows="4"
                 />
 
@@ -220,13 +229,13 @@ function Profile() {
                   value={profile.about}
                   onChange={handleChange}
                   placeholder="About Me"
-                  className="border rounded-lg p-3 mt-4 w-full"
+                  className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3 mt-4 w-full"
                   rows="5"
                 />
 
                 <button
                   type="submit"
-                  className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+                  className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
                 >
                   Save Profile
                 </button>
@@ -238,6 +247,7 @@ function Profile() {
           </div>
 
         </div>
+
       </div>
 
       <Footer />
