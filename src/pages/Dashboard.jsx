@@ -20,12 +20,12 @@ function Dashboard() {
             </h1>
 
             <p className="text-gray-500 mt-2">
-              Welcome back to CareerHub
+              Welcome back to CareerHub. Manage your career journey here.
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Statistics */}
+          <div className="grid md:grid-cols-4 gap-6">
 
             <div className="bg-white rounded-2xl shadow p-6">
               <h3 className="text-gray-500">
@@ -54,6 +54,16 @@ function Dashboard() {
 
               <p className="text-4xl font-bold text-orange-500 mt-2">
                 20%
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6">
+              <h3 className="text-gray-500">
+                Resume Uploaded
+              </h3>
+
+              <p className="text-4xl font-bold text-purple-600 mt-2">
+                No
               </p>
             </div>
 
@@ -93,6 +103,26 @@ function Dashboard() {
 
           </div>
 
+          {/* Profile Progress */}
+          <div className="bg-white rounded-2xl shadow p-6 mt-8">
+
+            <h2 className="text-2xl font-semibold mb-4">
+              Profile Progress
+            </h2>
+
+            <div className="w-full bg-gray-200 rounded-full h-4">
+              <div
+                className="bg-blue-600 h-4 rounded-full"
+                style={{ width: "20%" }}
+              ></div>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-3">
+              Complete your profile to attract recruiters.
+            </p>
+
+          </div>
+
           {/* Recent Activity */}
           <div className="bg-white rounded-2xl shadow p-6 mt-8">
 
@@ -123,6 +153,23 @@ function Dashboard() {
               </div>
 
             </div>
+
+          </div>
+
+          {/* Career Tips */}
+          <div className="bg-white rounded-2xl shadow p-6 mt-8">
+
+            <h2 className="text-2xl font-semibold mb-4">
+              Career Tips
+            </h2>
+
+            <ul className="list-disc ml-6 space-y-2 text-gray-600">
+              <li>Update your profile regularly.</li>
+              <li>Add relevant skills and certifications.</li>
+              <li>Upload your latest resume.</li>
+              <li>Apply to jobs that match your skills.</li>
+              <li>Track your applications consistently.</li>
+            </ul>
 
           </div>
 
