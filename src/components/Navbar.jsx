@@ -16,9 +16,9 @@ function Navbar() {
           </li>
 
           <li>
-            <a href="#" className="hover:text-blue-600 transition">
+            <Link to="/jobs" className="hover:text-blue-600 transition">
               Jobs
-            </a>
+            </Link>
           </li>
 
           <li>
