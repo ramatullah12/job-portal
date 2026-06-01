@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useBookmarks } from "../context/BookmarkContext";
+import { useApplications } from "../context/ApplicationContext";
 
 function Navbar() {
   const { bookmarks } = useBookmarks();
+  const { applications } = useApplications();
 
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
@@ -16,7 +18,7 @@ function Navbar() {
           CareerHub
         </Link>
 
-        {/* Navigation */}
+        {/* Menu */}
         <ul className="hidden md:flex items-center gap-8 font-medium">
 
           <li>
@@ -43,6 +45,21 @@ function Navbar() {
               className="hover:text-blue-600 transition"
             >
               Dashboard
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/applications"
+              className="hover:text-blue-600 transition relative"
+            >
+              Applications
+
+              {applications.length > 0 && (
+                <span className="absolute -top-2 -right-5 bg-green-600 text-white text-xs px-2 py-0.5 rounded-full">
+                  {applications.length}
+                </span>
+              )}
             </Link>
           </li>
 
@@ -81,7 +98,7 @@ function Navbar() {
 
         </ul>
 
-        {/* Buttons */}
+        {/* Auth Buttons */}
         <div className="flex items-center gap-3">
 
           <Link
