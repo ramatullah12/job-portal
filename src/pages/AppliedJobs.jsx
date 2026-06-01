@@ -17,25 +17,31 @@ function AppliedJobs() {
           </h1>
 
           {applications.length === 0 ? (
-            <div className="bg-white p-6 rounded-2xl shadow">
-              No applications yet.
+            <div className="bg-white rounded-2xl shadow p-8 text-center">
+              <h2 className="text-xl font-semibold">
+                No Applications Yet
+              </h2>
+
+              <p className="text-gray-500 mt-2">
+                Start applying to jobs today.
+              </p>
             </div>
           ) : (
             <div className="grid gap-4">
               {applications.map((job) => (
                 <div
                   key={job.slug}
-                  className="bg-white p-6 rounded-2xl shadow"
+                  className="bg-white rounded-2xl shadow p-6"
                 >
                   <h2 className="text-xl font-bold">
                     {job.title}
                   </h2>
 
-                  <p className="text-gray-500">
+                  <p className="text-gray-600">
                     {job.company_name}
                   </p>
 
-                  <p className="mt-2">
+                  <p className="text-gray-500">
                     {job.location}
                   </p>
                 </div>
