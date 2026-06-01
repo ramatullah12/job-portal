@@ -74,77 +74,98 @@ function FeaturedJobs() {
 
   if (loading) {
     return (
-      <div className="text-center py-20 text-xl">
-        Loading jobs...
+      <div className="py-24 flex justify-center">
+        <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="text-center py-20 text-red-500">
+      <div className="text-center py-20 text-red-500 font-medium">
         {error}
       </div>
     );
   }
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-center mb-4">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-4">
           Featured Jobs
         </h2>
 
-        <p className="text-center text-gray-500 mb-10">
+        <p className="text-center text-gray-500 dark:text-gray-300 mb-10">
           Discover the latest opportunities
         </p>
 
+        {/* Search */}
         <SearchBar
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
         />
 
+        {/* Filter */}
         <JobFilter
           selectedType={selectedType}
           setSelectedType={setSelectedType}
         />
 
+        {/* Empty State */}
         {currentJobs.length === 0 ? (
-          <div className="text-center py-10 text-gray-500">
-            No jobs found
+          <div className="text-center py-20">
+            <h3 className="text-2xl font-semibold text-slate-700 dark:text-white">
+              No Jobs Found
+            </h3>
+
+            <p className="text-gray-500 dark:text-gray-400 mt-2">
+              Try changing keywords or filters.
+            </p>
           </div>
         ) : (
           <>
+            {/* Jobs Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
               {currentJobs.map((job) => (
                 <JobCard
                   key={job.slug || job.id}
                   job={job}
                 />
               ))}
+
             </div>
 
-            <div className="flex justify-center gap-2 mt-10 flex-wrap">
-              {[...Array(totalPages)].map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() =>
-                    setCurrentPage(index + 1)
-                  }
-                  className={`px-4 py-2 rounded-lg transition ${
-                    currentPage === index + 1
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-200 hover:bg-gray-300"
-                  }`}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center gap-2 mt-12 flex-wrap">
+
+                {[...Array(totalPages)].map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() =>
+                      setCurrentPage(index + 1)
+                    }
+                    className={`
+                      px-4 py-2 rounded-lg transition
+                      ${
+                        currentPage === index + 1
+                          ? "bg-blue-600 text-white"
+                          : "bg-white dark:bg-slate-800 text-slate-700 dark:text-white border dark:border-slate-700 hover:bg-gray-100 dark:hover:bg-slate-700"
+                      }
+                    `}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+
+              </div>
+            )}
+
           </>
         )}
-
       </div>
     </section>
   );
