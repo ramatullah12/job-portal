@@ -1,10 +1,27 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 import { useBookmarks } from "../context/BookmarkContext";
+import { useApplications } from "../context/ApplicationContext";
 
 function Dashboard() {
   const { bookmarks } = useBookmarks();
+  const { applications } = useApplications();
+
+  const profile =
+    JSON.parse(localStorage.getItem("userProfile")) || {};
+
+  const resumeName =
+    localStorage.getItem("resumeName");
+
+  const profileCompleted =
+    profile.fullName &&
+    profile.email &&
+    profile.phone &&
+    profile.location
+      ? 100
+      : 50;
 
   return (
     <>
@@ -16,11 +33,13 @@ function Dashboard() {
           {/* Header */}
           <div className="mb-10">
             <h1 className="text-4xl font-bold">
-              Dashboard
+              Welcome,
+              {" "}
+              {profile.fullName || "Candidate"} 👋
             </h1>
 
             <p className="text-gray-500 mt-2">
-              Welcome back to CareerHub. Manage your career journey here.
+              Manage your career journey with CareerHub
             </p>
           </div>
 
@@ -43,7 +62,7 @@ function Dashboard() {
               </h3>
 
               <p className="text-4xl font-bold text-green-600 mt-2">
-                0
+                {applications.length}
               </p>
             </div>
 
@@ -53,7 +72,7 @@ function Dashboard() {
               </h3>
 
               <p className="text-4xl font-bold text-orange-500 mt-2">
-                20%
+                {profileCompleted}%
               </p>
             </div>
 
@@ -62,8 +81,8 @@ function Dashboard() {
                 Resume Uploaded
               </h3>
 
-              <p className="text-4xl font-bold text-purple-600 mt-2">
-                No
+              <p className="text-lg font-bold text-purple-600 mt-2">
+                {resumeName ? "Yes" : "No"}
               </p>
             </div>
 
@@ -99,11 +118,18 @@ function Dashboard() {
                 Saved Jobs
               </Link>
 
+              <Link
+                to="/applications"
+                className="bg-orange-500 text-white px-5 py-3 rounded-lg hover:bg-orange-600"
+              >
+                Applications
+              </Link>
+
             </div>
 
           </div>
 
-          {/* Profile Progress */}
+          {/* Progress */}
           <div className="bg-white rounded-2xl shadow p-6 mt-8">
 
             <h2 className="text-2xl font-semibold mb-4">
@@ -113,63 +139,49 @@ function Dashboard() {
             <div className="w-full bg-gray-200 rounded-full h-4">
               <div
                 className="bg-blue-600 h-4 rounded-full"
-                style={{ width: "20%" }}
-              ></div>
+                style={{
+                  width: `${profileCompleted}%`,
+                }}
+              />
             </div>
 
             <p className="text-sm text-gray-500 mt-3">
-              Complete your profile to attract recruiters.
+              Complete your profile to increase visibility.
             </p>
 
           </div>
 
-          {/* Recent Activity */}
+          {/* Recent Saved Jobs */}
           <div className="bg-white rounded-2xl shadow p-6 mt-8">
 
             <h2 className="text-2xl font-semibold mb-4">
-              Recent Activity
+              Recent Saved Jobs
             </h2>
 
-            <div className="space-y-4">
+            {bookmarks.length === 0 ? (
+              <p className="text-gray-500">
+                No saved jobs yet.
+              </p>
+            ) : (
+              <div className="space-y-4">
 
-              <div className="border rounded-lg p-4">
-                <p className="font-medium">
-                  Saved a new job
-                </p>
+                {bookmarks.slice(0, 3).map((job) => (
+                  <div
+                    key={job.slug}
+                    className="border rounded-lg p-4"
+                  >
+                    <h3 className="font-semibold">
+                      {job.title}
+                    </h3>
 
-                <p className="text-sm text-gray-500">
-                  Keep tracking your favorite opportunities.
-                </p>
+                    <p className="text-sm text-gray-500">
+                      {job.company_name}
+                    </p>
+                  </div>
+                ))}
+
               </div>
-
-              <div className="border rounded-lg p-4">
-                <p className="font-medium">
-                  Complete your profile
-                </p>
-
-                <p className="text-sm text-gray-500">
-                  Increase your chances of getting hired.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* Career Tips */}
-          <div className="bg-white rounded-2xl shadow p-6 mt-8">
-
-            <h2 className="text-2xl font-semibold mb-4">
-              Career Tips
-            </h2>
-
-            <ul className="list-disc ml-6 space-y-2 text-gray-600">
-              <li>Update your profile regularly.</li>
-              <li>Add relevant skills and certifications.</li>
-              <li>Upload your latest resume.</li>
-              <li>Apply to jobs that match your skills.</li>
-              <li>Track your applications consistently.</li>
-            </ul>
+            )}
 
           </div>
 

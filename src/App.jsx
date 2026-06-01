@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Companies from "./pages/Companies";
+import AppliedJobs from "./pages/AppliedJobs";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/companies" element={<Companies />} />
+        <Route path="/applications" element={<AppliedJobs />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,19 +1,18 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 
 import App from "./App";
+import "./index.css";
 
-import {
-  BookmarkProvider,
-} from "./context/BookmarkContext";
+import { BookmarkProvider } from "./context/BookmarkContext";
+import { ApplicationProvider } from "./context/ApplicationContext";
 
-createRoot(
-  document.getElementById("root")
-).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BookmarkProvider>
-      <App />
+      <ApplicationProvider>
+        <App />
+      </ApplicationProvider>
     </BookmarkProvider>
   </StrictMode>
 );
