@@ -11,28 +11,27 @@ function Profile() {
     skills: "",
     experience: "",
     about: "",
+    linkedin: "",
+    github: "",
   });
 
   const [photo, setPhoto] = useState("");
   const [resumeName, setResumeName] = useState("");
 
   useEffect(() => {
-    const savedProfile =
-      localStorage.getItem("userProfile");
+    const savedProfile = localStorage.getItem("userProfile");
 
     if (savedProfile) {
       setProfile(JSON.parse(savedProfile));
     }
 
-    const savedPhoto =
-      localStorage.getItem("profilePhoto");
+    const savedPhoto = localStorage.getItem("profilePhoto");
 
     if (savedPhoto) {
       setPhoto(savedPhoto);
     }
 
-    const savedResume =
-      localStorage.getItem("resumeName");
+    const savedResume = localStorage.getItem("resumeName");
 
     if (savedResume) {
       setResumeName(savedResume);
@@ -81,19 +80,38 @@ function Profile() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!profile.fullName || !profile.email) {
+      alert("Full Name and Email are required");
+      return;
+    }
+
     localStorage.setItem(
       "userProfile",
       JSON.stringify(profile)
     );
 
+    localStorage.setItem(
+      "userName",
+      profile.fullName
+    );
+
     alert("Profile saved successfully!");
   };
+
+  const completion = Math.round(
+    (
+      Object.values(profile).filter(
+        (item) => item !== ""
+      ).length /
+      Object.keys(profile).length
+    ) * 100
+  );
 
   return (
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-10 transition-colors duration-300">
+      <main className="min-h-screen bg-slate-50 dark:bg-slate-900 py-10 transition-colors duration-300">
 
         <div className="max-w-6xl mx-auto px-6">
 
@@ -135,6 +153,32 @@ function Profile() {
                   {profile.email || "your@email.com"}
                 </p>
 
+                {/* Completion */}
+                <div className="w-full mt-6">
+
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm dark:text-white">
+                      Profile Completion
+                    </span>
+
+                    <span className="text-blue-600 font-semibold">
+                      {completion}%
+                    </span>
+                  </div>
+
+                  <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-3">
+
+                    <div
+                      className="bg-blue-600 h-3 rounded-full transition-all"
+                      style={{
+                        width: `${completion}%`,
+                      }}
+                    />
+
+                  </div>
+
+                </div>
+
               </div>
 
               <hr className="my-6 border-gray-300 dark:border-slate-700" />
@@ -155,6 +199,50 @@ function Profile() {
                   Uploaded: {resumeName}
                 </p>
               )}
+
+              <hr className="my-6 border-gray-300 dark:border-slate-700" />
+
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
+                Quick Info
+              </h3>
+
+              <div className="space-y-3 text-sm">
+
+                <p className="dark:text-gray-300">
+                  📍 {profile.location || "-"}
+                </p>
+
+                <p className="dark:text-gray-300">
+                  📞 {profile.phone || "-"}
+                </p>
+
+                <p className="dark:text-gray-300">
+                  💼 {profile.skills || "-"}
+                </p>
+
+                {profile.linkedin && (
+                  <a
+                    href={profile.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-blue-600"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+
+                {profile.github && (
+                  <a
+                    href={profile.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-blue-600"
+                  >
+                    GitHub
+                  </a>
+                )}
+
+              </div>
 
             </div>
 
@@ -204,6 +292,24 @@ function Profile() {
                     className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3"
                   />
 
+                  <input
+                    type="url"
+                    name="linkedin"
+                    value={profile.linkedin}
+                    onChange={handleChange}
+                    placeholder="LinkedIn URL"
+                    className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3"
+                  />
+
+                  <input
+                    type="url"
+                    name="github"
+                    value={profile.github}
+                    onChange={handleChange}
+                    placeholder="GitHub URL"
+                    className="border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 dark:text-white rounded-lg p-3"
+                  />
+
                 </div>
 
                 <textarea
@@ -248,7 +354,7 @@ function Profile() {
 
         </div>
 
-      </div>
+      </main>
 
       <Footer />
     </>
