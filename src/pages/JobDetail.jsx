@@ -10,32 +10,35 @@ function JobDetail() {
   const job = location.state?.job;
 
   const { addBookmark } = useBookmarks();
-  const { applyJob } = useApplications();
+  const { applyJob, applications } =
+    useApplications();
 
   if (!job) {
     return (
       <>
         <Navbar />
 
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+
           <div className="text-center">
 
-            <h1 className="text-3xl font-bold mb-4">
+            <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Job Not Found
             </h1>
 
-            <p className="text-gray-500 mb-6">
-              The job information is unavailable.
+            <p className="text-gray-500 dark:text-gray-400 mb-6">
+              The job information is unavailable or expired.
             </p>
 
             <Link
               to="/jobs"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
             >
               Back to Jobs
             </Link>
 
           </div>
+
         </div>
 
         <Footer />
@@ -43,9 +46,12 @@ function JobDetail() {
     );
   }
 
+  const alreadyApplied = applications.some(
+    (item) => item.slug === job.slug
+  );
+
   const handleApply = () => {
     applyJob(job);
-    alert("Application submitted successfully!");
   };
 
   const handleSave = () => {
@@ -57,7 +63,7 @@ function JobDetail() {
     <>
       <Navbar />
 
-      <main className="bg-slate-50 min-h-screen">
+      <main className="bg-slate-50 dark:bg-slate-900 min-h-screen transition-colors duration-300">
 
         <div className="max-w-5xl mx-auto px-6 py-12">
 
@@ -68,7 +74,7 @@ function JobDetail() {
             ← Back to Jobs
           </Link>
 
-          <div className="bg-white shadow-lg rounded-2xl p-8 mt-6">
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg rounded-2xl p-8 mt-6">
 
             {/* Header */}
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
@@ -79,15 +85,15 @@ function JobDetail() {
                   {job.job_types?.[0] || "Job"}
                 </span>
 
-                <h1 className="text-4xl font-bold mt-4">
+                <h1 className="text-4xl font-bold text-slate-900 dark:text-white mt-4">
                   {job.title}
                 </h1>
 
-                <p className="text-lg text-gray-700 mt-3">
+                <p className="text-lg text-gray-700 dark:text-gray-300 mt-3">
                   {job.company_name}
                 </p>
 
-                <p className="text-gray-500 mt-2">
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
                   📍 {job.location}
                 </p>
 
@@ -95,14 +101,21 @@ function JobDetail() {
 
             </div>
 
-            {/* Action Buttons */}
+            {/* Buttons */}
             <div className="flex flex-wrap gap-4 mt-8">
 
               <button
                 onClick={handleApply}
-                className="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition"
+                disabled={alreadyApplied}
+                className={`px-6 py-3 rounded-xl text-white transition ${
+                  alreadyApplied
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-green-600 hover:bg-green-700"
+                }`}
               >
-                Apply Job
+                {alreadyApplied
+                  ? "Already Applied"
+                  : "Apply Job"}
               </button>
 
               <button
@@ -126,12 +139,12 @@ function JobDetail() {
             {/* Description */}
             <div className="mt-10">
 
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
                 Job Description
               </h2>
 
               <div
-                className="prose max-w-none"
+                className="prose dark:prose-invert max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: job.description,
                 }}
@@ -139,58 +152,68 @@ function JobDetail() {
 
             </div>
 
-            {/* Extra Information */}
-            <div className="mt-10 border-t pt-8">
+            {/* Job Information */}
+            <div className="mt-10 border-t border-gray-200 dark:border-slate-700 pt-8">
 
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
                 Job Information
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
 
-                <div className="bg-slate-100 p-4 rounded-xl">
-                  <p className="font-semibold">
+                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
+                  <p className="font-semibold dark:text-white">
                     Company
                   </p>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {job.company_name}
                   </p>
                 </div>
 
-                <div className="bg-slate-100 p-4 rounded-xl">
-                  <p className="font-semibold">
+                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
+                  <p className="font-semibold dark:text-white">
                     Location
                   </p>
 
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {job.location}
                   </p>
                 </div>
 
-                <div className="bg-slate-100 p-4 rounded-xl">
-                  <p className="font-semibold">
+                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
+                  <p className="font-semibold dark:text-white">
                     Job Type
                   </p>
 
-                  <p className="text-gray-600">
-                    {job.job_types?.[0] || "Not specified"}
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {job.job_types?.[0] ||
+                      "Not Specified"}
                   </p>
                 </div>
 
-                <div className="bg-slate-100 p-4 rounded-xl">
-                  <p className="font-semibold">
-                    Remote
+                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
+                  <p className="font-semibold dark:text-white">
+                    Work Mode
                   </p>
 
-                  <p className="text-gray-600">
-                    Available
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Remote Available
                   </p>
                 </div>
 
               </div>
 
             </div>
+
+            {/* Application Status */}
+            {alreadyApplied && (
+              <div className="mt-8 bg-green-100 text-green-700 px-5 py-4 rounded-xl">
+
+                ✅ You have already applied for this job.
+
+              </div>
+            )}
 
           </div>
 
