@@ -1,8 +1,9 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function Companies() {
-  const companies = [
+  const companiesData = [
     {
       id: 1,
       name: "Google",
@@ -13,7 +14,7 @@ function Companies() {
     {
       id: 2,
       name: "Microsoft",
-      industry: "Software & Cloud",
+      industry: "Technology",
       jobs: 95,
       logo: "💻",
     },
@@ -41,29 +42,68 @@ function Companies() {
     {
       id: 6,
       name: "Spotify",
-      industry: "Music Streaming",
+      industry: "Music",
       jobs: 25,
       logo: "🎵",
     },
   ];
 
+  const [search, setSearch] = useState("");
+  const [industry, setIndustry] =
+    useState("All");
+
+  const industries = [
+    "All",
+    ...new Set(
+      companiesData.map(
+        (item) => item.industry
+      )
+    ),
+  ];
+
+  const filteredCompanies =
+    companiesData.filter((company) => {
+      const matchesSearch =
+        company.name
+          .toLowerCase()
+          .includes(
+            search.toLowerCase()
+          );
+
+      const matchesIndustry =
+        industry === "All" ||
+        company.industry === industry;
+
+      return (
+        matchesSearch &&
+        matchesIndustry
+      );
+    });
+
+  const totalJobs =
+    companiesData.reduce(
+      (sum, company) =>
+        sum + company.jobs,
+      0
+    );
+
   return (
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+      <main className="min-h-screen bg-slate-50 dark:bg-slate-900">
 
         <div className="max-w-7xl mx-auto px-6 py-10">
 
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
 
-            <h1 className="text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
               Top Companies
             </h1>
 
-            <p className="text-gray-500 dark:text-gray-300 text-lg">
-              Discover world-class companies hiring talented professionals.
+            <p className="text-gray-500 dark:text-gray-400 mt-3">
+              Explore companies hiring now.
             </p>
 
           </div>
@@ -71,97 +111,153 @@ function Companies() {
           {/* Statistics */}
           <div className="grid md:grid-cols-3 gap-6 mb-10">
 
-            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-6 rounded-2xl shadow">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6">
 
               <h3 className="text-gray-500 dark:text-gray-400">
                 Companies
               </h3>
 
               <p className="text-4xl font-bold text-blue-600 mt-2">
-                {companies.length}
+                {companiesData.length}
               </p>
 
             </div>
 
-            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-6 rounded-2xl shadow">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6">
 
               <h3 className="text-gray-500 dark:text-gray-400">
-                Open Positions
+                Open Jobs
               </h3>
 
               <p className="text-4xl font-bold text-green-600 mt-2">
-                415+
+                {totalJobs}
               </p>
 
             </div>
 
-            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-6 rounded-2xl shadow">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6">
 
               <h3 className="text-gray-500 dark:text-gray-400">
                 Industries
               </h3>
 
               <p className="text-4xl font-bold text-purple-600 mt-2">
-                12+
+                {industries.length - 1}
               </p>
 
             </div>
 
           </div>
 
+          {/* Search & Filter */}
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+
+            <input
+              type="text"
+              placeholder="Search company..."
+              value={search}
+              onChange={(e) =>
+                setSearch(
+                  e.target.value
+                )
+              }
+              className="
+                flex-1
+                border
+                border-gray-300
+                dark:border-slate-600
+                bg-white
+                dark:bg-slate-800
+                dark:text-white
+                rounded-xl
+                px-4
+                py-3
+              "
+            />
+
+            <select
+              value={industry}
+              onChange={(e) =>
+                setIndustry(
+                  e.target.value
+                )
+              }
+              className="
+                border
+                border-gray-300
+                dark:border-slate-600
+                bg-white
+                dark:bg-slate-800
+                dark:text-white
+                rounded-xl
+                px-4
+                py-3
+              "
+            >
+              {industries.map(
+                (item) => (
+                  <option
+                    key={item}
+                  >
+                    {item}
+                  </option>
+                )
+              )}
+            </select>
+
+          </div>
+
           {/* Company Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            {companies.map((company) => (
-              <div
-                key={company.id}
-                className="
-                  bg-white
-                  dark:bg-slate-800
-                  border
-                  border-gray-200
-                  dark:border-slate-700
-                  p-6
-                  rounded-2xl
-                  shadow
-                  hover:shadow-xl
-                  transition
-                "
-              >
-
-                <div className="text-5xl mb-4">
-                  {company.logo}
-                </div>
-
-                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  {company.name}
-                </h2>
-
-                <p className="text-gray-500 dark:text-gray-400 mt-2">
-                  {company.industry}
-                </p>
-
-                <p className="mt-4 font-semibold text-blue-600">
-                  {company.jobs} Open Jobs
-                </p>
-
-                <button
+            {filteredCompanies.map(
+              (company) => (
+                <div
+                  key={company.id}
                   className="
-                    mt-5
-                    w-full
-                    bg-blue-600
-                    text-white
-                    py-3
-                    rounded-xl
-                    hover:bg-blue-700
+                    bg-white
+                    dark:bg-slate-800
+                    rounded-2xl
+                    shadow
+                    p-6
+                    hover:shadow-xl
                     transition
                   "
                 >
-                  View Jobs
-                </button>
 
-              </div>
-            ))}
+                  <div className="text-5xl mb-4">
+                    {company.logo}
+                  </div>
+
+                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    {company.name}
+                  </h2>
+
+                  <p className="text-gray-500 dark:text-gray-400 mt-2">
+                    {company.industry}
+                  </p>
+
+                  <p className="text-blue-600 font-semibold mt-4">
+                    {company.jobs} Open Jobs
+                  </p>
+
+                  <button
+                    className="
+                      mt-5
+                      w-full
+                      bg-blue-600
+                      text-white
+                      py-3
+                      rounded-xl
+                      hover:bg-blue-700
+                    "
+                  >
+                    View Company
+                  </button>
+
+                </div>
+              )
+            )}
 
           </div>
 
