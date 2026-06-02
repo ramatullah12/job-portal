@@ -14,28 +14,49 @@ function Register() {
     confirmPassword: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
+
+    setError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (
-      !form.fullName ||
-      !form.email ||
-      !form.password ||
-      !form.confirmPassword
+      !form.fullName.trim() ||
+      !form.email.trim() ||
+      !form.password.trim() ||
+      !form.confirmPassword.trim()
     ) {
-      alert("Please fill in all fields");
+      setError("Please fill in all fields");
+      return;
+    }
+
+    if (form.password.length < 6) {
+      setError("Password must be at least 6 characters");
       return;
     }
 
     if (form.password !== form.confirmPassword) {
-      alert("Passwords do not match");
+      setError("Passwords do not match");
+      return;
+    }
+
+    const existingUser = JSON.parse(
+      localStorage.getItem("registeredUser")
+    );
+
+    if (
+      existingUser &&
+      existingUser.email === form.email
+    ) {
+      setError("Email already registered");
       return;
     }
 
@@ -44,6 +65,7 @@ function Register() {
       JSON.stringify({
         fullName: form.fullName,
         email: form.email,
+        password: form.password,
       })
     );
 
@@ -84,6 +106,13 @@ function Register() {
             </p>
 
           </div>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-5 bg-red-100 text-red-600 px-4 py-3 rounded-lg">
+              {error}
+            </div>
+          )}
 
           {/* Form */}
           <form
@@ -160,7 +189,7 @@ function Register() {
                 name="password"
                 value={form.password}
                 onChange={handleChange}
-                placeholder="Enter password"
+                placeholder="Minimum 6 characters"
                 className="
                   w-full
                   px-4
@@ -190,7 +219,7 @@ function Register() {
                 name="confirmPassword"
                 value={form.confirmPassword}
                 onChange={handleChange}
-                placeholder="Confirm password"
+                placeholder="Re-enter password"
                 className="
                   w-full
                   px-4
@@ -225,7 +254,6 @@ function Register() {
             >
               Create Account
             </button>
-
           </form>
 
           {/* Footer */}
