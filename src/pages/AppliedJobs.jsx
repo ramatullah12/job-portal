@@ -3,7 +3,16 @@ import Footer from "../components/Footer";
 import { useApplications } from "../context/ApplicationContext";
 
 function AppliedJobs() {
-  const { applications } = useApplications();
+  const {
+    applications,
+    removeApplication,
+    clearApplications,
+  } = useApplications();
+
+  const pendingApplications =
+    applications.filter(
+      (job) => job.status === "Pending"
+    ).length;
 
   return (
     <>
@@ -14,28 +23,55 @@ function AppliedJobs() {
         <div className="max-w-7xl mx-auto px-6 py-10">
 
           {/* Header */}
-          <div className="mb-10">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-10">
 
-            <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
-              Applied Jobs
-            </h1>
+            <div>
+              <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
+                Applied Jobs
+              </h1>
 
-            <p className="mt-3 text-gray-500 dark:text-gray-300">
-              Track all jobs you have applied for.
-            </p>
+              <p className="mt-3 text-gray-500 dark:text-gray-300">
+                Track all jobs you have applied for.
+              </p>
+            </div>
+
+            {applications.length > 0 && (
+              <button
+                onClick={clearApplications}
+                className="mt-4 md:mt-0 bg-red-600 text-white px-5 py-3 rounded-xl hover:bg-red-700 transition"
+              >
+                Clear All
+              </button>
+            )}
 
           </div>
 
           {/* Statistics */}
-          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mb-10">
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
 
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
-              Total Applications
-            </h2>
+            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
 
-            <p className="text-4xl font-bold text-green-600 mt-3">
-              {applications.length}
-            </p>
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+                Total Applications
+              </h2>
+
+              <p className="text-4xl font-bold text-green-600 mt-3">
+                {applications.length}
+              </p>
+
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
+
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+                Pending Applications
+              </h2>
+
+              <p className="text-4xl font-bold text-orange-500 mt-3">
+                {pendingApplications}
+              </p>
+
+            </div>
 
           </div>
 
@@ -76,7 +112,7 @@ function AppliedJobs() {
                   "
                 >
 
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                  <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
 
                     <div>
 
@@ -92,13 +128,44 @@ function AppliedJobs() {
                         📍 {job.location}
                       </p>
 
+                      <p className="text-blue-600 mt-2">
+                        Applied:
+                        {" "}
+                        {job.appliedAt || "Today"}
+                      </p>
+
                     </div>
 
-                    <div>
+                    <div className="flex flex-col gap-3">
 
-                      <span className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium">
-                        Applied
+                      <span
+                        className={`px-4 py-2 rounded-full text-center font-medium ${
+                          job.status === "Accepted"
+                            ? "bg-green-100 text-green-700"
+                            : job.status === "Rejected"
+                            ? "bg-red-100 text-red-700"
+                            : "bg-yellow-100 text-yellow-700"
+                        }`}
+                      >
+                        {job.status || "Pending"}
                       </span>
+
+                      <button
+                        onClick={() =>
+                          removeApplication(job.slug)
+                        }
+                        className="
+                          bg-red-600
+                          text-white
+                          px-4
+                          py-2
+                          rounded-lg
+                          hover:bg-red-700
+                          transition
+                        "
+                      >
+                        Remove
+                      </button>
 
                     </div>
 
