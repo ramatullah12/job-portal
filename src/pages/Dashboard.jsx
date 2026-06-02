@@ -6,8 +6,8 @@ import { useBookmarks } from "../context/BookmarkContext";
 import { useApplications } from "../context/ApplicationContext";
 
 function Dashboard() {
-  const { bookmarks } = useBookmarks();
-  const { applications } = useApplications();
+  const { bookmarks = [] } = useBookmarks();
+  const { applications = [] } = useApplications();
 
   const profile =
     JSON.parse(localStorage.getItem("userProfile")) || {};
@@ -15,38 +15,54 @@ function Dashboard() {
   const resumeName =
     localStorage.getItem("resumeName");
 
-  const profileCompleted =
-    profile.fullName &&
-    profile.email &&
-    profile.phone &&
-    profile.location
-      ? 100
-      : 50;
+  const profileFields = [
+    profile.fullName,
+    profile.email,
+    profile.phone,
+    profile.location,
+    profile.skills,
+    profile.experience,
+    profile.about,
+    profile.linkedin,
+    profile.github,
+  ];
+
+  const filledFields =
+    profileFields.filter(Boolean).length;
+
+  const profileCompleted = Math.round(
+    (filledFields / profileFields.length) * 100
+  );
+
+  const userName =
+    localStorage.getItem("userName") ||
+    profile.fullName ||
+    "Candidate";
 
   return (
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+      <main className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
 
         <div className="max-w-7xl mx-auto px-6 py-10">
 
           {/* Header */}
           <div className="mb-10">
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white">
-              Welcome, {profile.fullName || "Candidate"} 👋
+              Welcome, {userName} 👋
             </h1>
 
-            <p className="text-gray-500 dark:text-gray-300 mt-2">
+            <p className="text-gray-500 dark:text-gray-400 mt-2">
               Manage your career journey with CareerHub
             </p>
           </div>
 
           {/* Statistics */}
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
-              <h3 className="text-gray-500 dark:text-gray-300">
+              <h3 className="text-gray-500 dark:text-gray-400">
                 Saved Jobs
               </h3>
 
@@ -56,7 +72,7 @@ function Dashboard() {
             </div>
 
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
-              <h3 className="text-gray-500 dark:text-gray-300">
+              <h3 className="text-gray-500 dark:text-gray-400">
                 Applied Jobs
               </h3>
 
@@ -66,7 +82,7 @@ function Dashboard() {
             </div>
 
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
-              <h3 className="text-gray-500 dark:text-gray-300">
+              <h3 className="text-gray-500 dark:text-gray-400">
                 Profile Completion
               </h3>
 
@@ -76,12 +92,12 @@ function Dashboard() {
             </div>
 
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
-              <h3 className="text-gray-500 dark:text-gray-300">
-                Resume Uploaded
+              <h3 className="text-gray-500 dark:text-gray-400">
+                Resume Status
               </h3>
 
               <p className="text-lg font-bold text-purple-600 mt-2">
-                {resumeName ? "Yes" : "No"}
+                {resumeName ? "Uploaded" : "Not Uploaded"}
               </p>
             </div>
 
@@ -131,9 +147,17 @@ function Dashboard() {
           {/* Profile Progress */}
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mt-8">
 
-            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-              Profile Progress
-            </h2>
+            <div className="flex justify-between items-center mb-4">
+
+              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+                Profile Progress
+              </h2>
+
+              <span className="text-blue-600 font-bold">
+                {profileCompleted}%
+              </span>
+
+            </div>
 
             <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-4">
 
@@ -147,8 +171,33 @@ function Dashboard() {
             </div>
 
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
-              Complete your profile to increase visibility.
+              Complete your profile to improve visibility for recruiters.
             </p>
+
+          </div>
+
+          {/* Resume */}
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mt-8">
+
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
+              Resume Information
+            </h2>
+
+            {resumeName ? (
+              <div>
+                <p className="text-green-600 font-medium">
+                  Resume Uploaded Successfully
+                </p>
+
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  {resumeName}
+                </p>
+              </div>
+            ) : (
+              <p className="text-gray-500 dark:text-gray-400">
+                No resume uploaded yet.
+              </p>
+            )}
 
           </div>
 
@@ -166,17 +215,21 @@ function Dashboard() {
             ) : (
               <div className="space-y-4">
 
-                {bookmarks.slice(0, 3).map((job) => (
+                {bookmarks.slice(0, 5).map((job) => (
                   <div
                     key={job.slug || job.id}
-                    className="border border-gray-200 dark:border-slate-700 rounded-lg p-4"
+                    className="border border-gray-200 dark:border-slate-700 rounded-xl p-4"
                   >
                     <h3 className="font-semibold text-slate-900 dark:text-white">
                       {job.title}
                     </h3>
 
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                       {job.company_name}
+                    </p>
+
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      📍 {job.location}
                     </p>
                   </div>
                 ))}
@@ -188,7 +241,7 @@ function Dashboard() {
 
         </div>
 
-      </div>
+      </main>
 
       <Footer />
     </>
