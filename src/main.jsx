@@ -7,15 +7,16 @@ import "./index.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import { BookmarkProvider } from "./context/BookmarkContext";
 import { ApplicationProvider } from "./context/ApplicationContext";
+import { SearchHistoryProvider, } from "./context/SearchHistoryContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider>
-      <BookmarkProvider>
-        <ApplicationProvider>
-          <App />
-        </ApplicationProvider>
-      </BookmarkProvider>
-    </ThemeProvider>
-  </StrictMode>
+  <BookmarkProvider>
+    <ApplicationProvider>
+      <SearchHistoryProvider>
+        <App />
+      </SearchHistoryProvider>
+    </ApplicationProvider>
+  </BookmarkProvider>
+</StrictMode>
 );
