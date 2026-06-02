@@ -12,30 +12,41 @@ function Login() {
     password: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
+
+    setError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!form.email || !form.password) {
-      alert("Please fill in all fields");
+      setError("Please fill in all fields");
       return;
     }
 
-    localStorage.setItem(
-      "isLoggedIn",
-      "true"
+    const registeredUser = JSON.parse(
+      localStorage.getItem("registeredUser")
     );
 
-    localStorage.setItem(
-      "userEmail",
-      form.email
-    );
+    if (!registeredUser) {
+      setError("No account found. Please register first.");
+      return;
+    }
+
+    if (registeredUser.email !== form.email) {
+      setError("Email not found.");
+      return;
+    }
+
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userEmail", form.email);
 
     alert("Login successful!");
 
@@ -62,7 +73,6 @@ function Login() {
             p-8
           "
         >
-
           {/* Header */}
           <div className="text-center mb-8">
 
@@ -75,6 +85,13 @@ function Login() {
             </p>
 
           </div>
+
+          {/* Error */}
+          {error && (
+            <div className="mb-4 bg-red-100 text-red-600 px-4 py-3 rounded-lg">
+              {error}
+            </div>
+          )}
 
           {/* Form */}
           <form
