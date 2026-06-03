@@ -4,14 +4,28 @@ import { useApplications } from "../context/ApplicationContext";
 
 function AppliedJobs() {
   const {
-    applications,
+    applications = [],
     removeApplication,
     clearApplications,
   } = useApplications();
 
   const pendingApplications =
     applications.filter(
-      (job) => job.status === "Pending"
+      (job) =>
+        (job.status || "Pending") ===
+        "Pending"
+    ).length;
+
+  const acceptedApplications =
+    applications.filter(
+      (job) =>
+        job.status === "Accepted"
+    ).length;
+
+  const rejectedApplications =
+    applications.filter(
+      (job) =>
+        job.status === "Rejected"
     ).length;
 
   return (
@@ -23,52 +37,86 @@ function AppliedJobs() {
         <div className="max-w-7xl mx-auto px-6 py-10">
 
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-10">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-10">
 
             <div>
+
               <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
                 Applied Jobs
               </h1>
 
-              <p className="mt-3 text-gray-500 dark:text-gray-300">
-                Track all jobs you have applied for.
+              <p className="mt-3 text-gray-500 dark:text-gray-400">
+                Track and manage all jobs you have applied for.
               </p>
+
             </div>
 
             {applications.length > 0 && (
               <button
                 onClick={clearApplications}
-                className="mt-4 md:mt-0 bg-red-600 text-white px-5 py-3 rounded-xl hover:bg-red-700 transition"
+                className="
+                  bg-red-600
+                  text-white
+                  px-5
+                  py-3
+                  rounded-xl
+                  hover:bg-red-700
+                  transition
+                "
               >
-                Clear All
+                Clear All Applications
               </button>
             )}
 
           </div>
 
           {/* Statistics */}
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
 
-            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6 border border-gray-200 dark:border-slate-700">
 
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+              <h3 className="text-gray-500 dark:text-gray-400">
                 Total Applications
-              </h2>
+              </h3>
 
-              <p className="text-4xl font-bold text-green-600 mt-3">
+              <p className="text-4xl font-bold text-blue-600 mt-2">
                 {applications.length}
               </p>
 
             </div>
 
-            <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6 border border-gray-200 dark:border-slate-700">
 
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                Pending Applications
-              </h2>
+              <h3 className="text-gray-500 dark:text-gray-400">
+                Pending
+              </h3>
 
-              <p className="text-4xl font-bold text-orange-500 mt-3">
+              <p className="text-4xl font-bold text-yellow-500 mt-2">
                 {pendingApplications}
+              </p>
+
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6 border border-gray-200 dark:border-slate-700">
+
+              <h3 className="text-gray-500 dark:text-gray-400">
+                Accepted
+              </h3>
+
+              <p className="text-4xl font-bold text-green-600 mt-2">
+                {acceptedApplications}
+              </p>
+
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6 border border-gray-200 dark:border-slate-700">
+
+              <h3 className="text-gray-500 dark:text-gray-400">
+                Rejected
+              </h3>
+
+              <p className="text-4xl font-bold text-red-600 mt-2">
+                {rejectedApplications}
               </p>
 
             </div>
@@ -79,16 +127,16 @@ function AppliedJobs() {
           {applications.length === 0 ? (
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-12 text-center">
 
-              <div className="text-6xl mb-4">
+              <div className="text-7xl mb-4">
                 📄
               </div>
 
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
                 No Applications Yet
               </h2>
 
               <p className="text-gray-500 dark:text-gray-400 mt-3">
-                Start applying for jobs and track your progress here.
+                Start applying for jobs and your application history will appear here.
               </p>
 
             </div>
@@ -107,7 +155,7 @@ function AppliedJobs() {
                     rounded-2xl
                     shadow
                     p-6
-                    hover:shadow-lg
+                    hover:shadow-xl
                     transition
                   "
                 >
@@ -128,7 +176,7 @@ function AppliedJobs() {
                         📍 {job.location}
                       </p>
 
-                      <p className="text-blue-600 mt-2">
+                      <p className="text-blue-600 mt-2 font-medium">
                         Applied:
                         {" "}
                         {job.appliedAt || "Today"}
@@ -152,19 +200,21 @@ function AppliedJobs() {
 
                       <button
                         onClick={() =>
-                          removeApplication(job.slug)
+                          removeApplication(
+                            job.slug
+                          )
                         }
                         className="
                           bg-red-600
                           text-white
-                          px-4
+                          px-5
                           py-2
                           rounded-lg
                           hover:bg-red-700
                           transition
                         "
                       >
-                        Remove
+                        Remove Application
                       </button>
 
                     </div>
