@@ -19,6 +19,7 @@ import NotFound from "./pages/NotFound";
 
 import ProtectedRoute from "./routes/ProtectedRoute";
 import GuestRoute from "./routes/GuestRoute";
+import Notifications from "./pages/Notifications";
 
 function App() {
   return (
@@ -92,6 +93,15 @@ function App() {
         <Route
           path="*"
           element={<NotFound />}
+        />
+
+        <Route
+          path="/notifications"
+          element={
+            <ProtectedRoute>
+              <Notifications />
+            </ProtectedRoute>
+          }
         />
 
       </Routes>

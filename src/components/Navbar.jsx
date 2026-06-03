@@ -2,12 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useBookmarks } from "../context/BookmarkContext";
 import { useApplications } from "../context/ApplicationContext";
 import { useTheme } from "../context/ThemeContext";
+import { useNotifications } from "../context/NotificationContext";
 
 function Navbar() {
   const navigate = useNavigate();
 
   const { bookmarks = [] } = useBookmarks();
   const { applications = [] } = useApplications();
+  const { notifications = [] } = useNotifications();
   const { darkMode, toggleTheme } = useTheme();
 
   const isLoggedIn =
@@ -38,7 +40,7 @@ function Navbar() {
           CareerHub
         </Link>
 
-        {/* Menu */}
+        {/* Navigation */}
         <ul className="hidden md:flex items-center gap-8 font-medium text-slate-700 dark:text-white">
 
           <li>
@@ -99,6 +101,21 @@ function Navbar() {
                   )}
                 </Link>
               </li>
+
+              <li>
+                <Link
+                  to="/notifications"
+                  className="relative hover:text-blue-600 transition"
+                >
+                  Notifications
+
+                  {notifications.length > 0 && (
+                    <span className="absolute -top-2 -right-5 bg-yellow-500 text-white text-xs px-2 py-0.5 rounded-full">
+                      {notifications.length}
+                    </span>
+                  )}
+                </Link>
+              </li>
             </>
           )}
 
@@ -125,7 +142,7 @@ function Navbar() {
         {/* Right Menu */}
         <div className="flex items-center gap-3">
 
-          {/* Theme Toggle */}
+          {/* Dark Mode */}
           <button
             onClick={toggleTheme}
             className="
@@ -145,7 +162,7 @@ function Navbar() {
 
           {isLoggedIn ? (
             <>
-              <span className="hidden md:block text-sm text-slate-600 dark:text-slate-300">
+              <span className="hidden lg:block text-sm text-slate-600 dark:text-slate-300">
                 {userEmail}
               </span>
 
@@ -193,9 +210,9 @@ function Navbar() {
                   border
                   border-gray-300
                   dark:border-slate-600
+                  dark:text-white
                   hover:bg-gray-100
                   dark:hover:bg-slate-700
-                  dark:text-white
                   transition
                 "
               >

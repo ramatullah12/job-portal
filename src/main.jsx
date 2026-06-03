@@ -8,6 +8,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { BookmarkProvider } from "./context/BookmarkContext";
 import { ApplicationProvider } from "./context/ApplicationContext";
 import { SearchHistoryProvider } from "./context/SearchHistoryContext";
+import { NotificationProvider } from "./context/NotificationContext";
 
 createRoot(
   document.getElementById("root")
@@ -17,7 +18,9 @@ createRoot(
       <BookmarkProvider>
         <ApplicationProvider>
           <SearchHistoryProvider>
-            <App />
+            <NotificationProvider>
+              <App />
+            </NotificationProvider>
           </SearchHistoryProvider>
         </ApplicationProvider>
       </BookmarkProvider>
