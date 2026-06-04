@@ -220,7 +220,6 @@ function Dashboard() {
               >
                 Saved Jobs
               </Link>
-
               <Link
                 to="/applications"
                 className="bg-orange-500 text-white px-5 py-3 rounded-lg hover:bg-orange-600"
