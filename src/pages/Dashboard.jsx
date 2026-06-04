@@ -231,7 +231,6 @@ function Dashboard() {
             </div>
 
           </div>
-
           {/* Recent Saved Jobs */}
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mt-8">
 
