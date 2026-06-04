@@ -238,7 +238,6 @@ function Dashboard() {
             <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
               Recent Saved Jobs
             </h2>
-
             {bookmarks.length === 0 ? (
               <p className="text-gray-500 dark:text-gray-400">
                 No saved jobs yet.
