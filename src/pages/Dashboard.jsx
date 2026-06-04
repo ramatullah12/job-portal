@@ -313,7 +313,6 @@ function Dashboard() {
           </div>
 
         </div>
-
       </main>
       <Footer />
     </>
