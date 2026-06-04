@@ -186,7 +186,6 @@ function Dashboard() {
                   Resume Not Uploaded
                 </p>
               )}
-
             </div>
           </div>
           {/* Quick Actions */}
