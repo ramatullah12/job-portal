@@ -227,7 +227,6 @@ function Dashboard() {
               >
                 Applications
               </Link>
-
             </div>
           </div>
           {/* Recent Saved Jobs */}
