@@ -199,7 +199,6 @@ function Dashboard() {
             </h2>
 
             <div className="flex flex-wrap gap-4">
-
               <Link
                 to="/profile"
                 className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
