@@ -245,7 +245,6 @@ function Dashboard() {
               </p>
             ) : (
               <div className="space-y-4">
-
                 {bookmarks
                   .slice(0, 5)
                   .map((job) => (
