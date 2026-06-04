@@ -256,7 +256,6 @@ function Dashboard() {
                       <h3 className="font-semibold text-slate-900 dark:text-white">
                         {job.title}
                       </h3>
-
                       <p className="text-gray-500 dark:text-gray-400">
                         {job.company_name}
                       </p>
