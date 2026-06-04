@@ -188,7 +188,6 @@ function Dashboard() {
               )}
 
             </div>
-
           </div>
           {/* Quick Actions */}
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mt-8">
