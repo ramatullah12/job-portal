@@ -213,7 +213,6 @@ function Dashboard() {
               >
                 Browse Jobs
               </Link>
-
               <Link
                 to="/bookmarks"
                 className="bg-purple-600 text-white px-5 py-3 rounded-lg hover:bg-purple-700"
