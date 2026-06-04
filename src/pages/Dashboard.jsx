@@ -285,7 +285,6 @@ function Dashboard() {
               </p>
             ) : (
               <div className="space-y-4">
-
                 {applications
                   .slice(0, 5)
                   .map((job) => (
