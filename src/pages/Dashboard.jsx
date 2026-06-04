@@ -206,7 +206,6 @@ function Dashboard() {
               >
                 Edit Profile
               </Link>
-
               <Link
                 to="/jobs"
                 className="bg-green-600 text-white px-5 py-3 rounded-lg hover:bg-green-700"
