@@ -176,7 +176,6 @@ function Dashboard() {
                   <p className="text-green-600 font-semibold">
                     Resume Uploaded
                   </p>
-
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
                     {resumeName}
                   </p>
