@@ -197,7 +197,6 @@ function Dashboard() {
             <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
               Quick Actions
             </h2>
-
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/profile"
