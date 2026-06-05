@@ -130,7 +130,6 @@ function Dashboard() {
             ))}
 
           </div>
-
           {/* Profile & Resume */}
           <div className="grid lg:grid-cols-2 gap-6 mt-8">
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
