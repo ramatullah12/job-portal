@@ -145,7 +145,6 @@ function Dashboard() {
                 <span className="text-blue-600 font-bold">
                   {profileCompleted}%
                 </span>
-
               </div>
               <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-4">
                 <div
