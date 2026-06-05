@@ -162,7 +162,6 @@ function Dashboard() {
               <p className="mt-4 text-gray-500 dark:text-gray-400">
                 Complete your profile to increase visibility to recruiters.
               </p>
-
             </div>
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
