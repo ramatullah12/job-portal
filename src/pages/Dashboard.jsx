@@ -119,7 +119,6 @@ function Dashboard() {
                 <h3 className="text-gray-500 dark:text-gray-400 mt-4">
                   {card.title}
                 </h3>
-
                 <p
                   className={`text-4xl font-bold mt-2 ${card.color}`}
                 >
