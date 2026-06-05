@@ -149,7 +149,6 @@ function Dashboard() {
               </div>
 
               <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-4">
-
                 <div
                   className="bg-blue-600 h-4 rounded-full transition-all duration-500"
                   style={{
