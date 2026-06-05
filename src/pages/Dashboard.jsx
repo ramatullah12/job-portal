@@ -125,7 +125,6 @@ function Dashboard() {
                 >
                   {card.value}
                 </p>
-
               </div>
             ))}
           </div>
