@@ -73,7 +73,6 @@ function Dashboard() {
       icon: "🔍",
     },
   ];
-
   return (
     <>
       <Navbar />
