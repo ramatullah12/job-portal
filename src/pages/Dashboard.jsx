@@ -92,7 +92,6 @@ function Dashboard() {
             <p className="text-gray-500 dark:text-gray-400 mt-2">
               Manage your career journey with CareerHub.
             </p>
-
           </div>
           {/* Analytics Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
