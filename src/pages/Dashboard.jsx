@@ -84,7 +84,6 @@ function Dashboard() {
 
           {/* Header */}
           <div className="mb-10">
-
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white">
               Welcome, {userName} 👋
             </h1>
