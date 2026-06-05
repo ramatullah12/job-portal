@@ -115,7 +115,6 @@ function Dashboard() {
                 <div className="text-4xl">
                   {card.icon}
                 </div>
-
                 <h3 className="text-gray-500 dark:text-gray-400 mt-4">
                   {card.title}
                 </h3>
