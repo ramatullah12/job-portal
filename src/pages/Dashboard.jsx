@@ -88,7 +88,6 @@ function Dashboard() {
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white">
               Welcome, {userName} 👋
             </h1>
-
             <p className="text-gray-500 dark:text-gray-400 mt-2">
               Manage your career journey with CareerHub.
             </p>
