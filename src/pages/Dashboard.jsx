@@ -158,7 +158,6 @@ function Dashboard() {
                 />
 
               </div>
-
               <p className="mt-4 text-gray-500 dark:text-gray-400">
                 Complete your profile to increase visibility to recruiters.
               </p>
