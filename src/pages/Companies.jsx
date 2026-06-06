@@ -348,7 +348,6 @@ function Companies() {
 
           </div>
         )}
-
       </main>
       <Footer />
     </>
