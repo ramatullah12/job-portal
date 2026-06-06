@@ -331,7 +331,6 @@ function Companies() {
                   <h3 className="font-semibold dark:text-white">
                     Website
                   </h3>
-
                   <a
                     href={selectedCompany.website}
                     target="_blank"
