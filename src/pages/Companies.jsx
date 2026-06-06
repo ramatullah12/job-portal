@@ -311,7 +311,6 @@ function Companies() {
                   <h3 className="font-semibold dark:text-white">
                     Description
                   </h3>
-
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
                     {selectedCompany.description}
                   </p>
