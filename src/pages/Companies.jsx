@@ -326,7 +326,6 @@ function Companies() {
                     {selectedCompany.jobs}
                   </p>
                 </div>
-
                 <div>
                   <h3 className="font-semibold dark:text-white">
                     Website
