@@ -350,7 +350,6 @@ function Companies() {
         )}
 
       </main>
-
       <Footer />
     </>
   );
