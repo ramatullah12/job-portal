@@ -304,7 +304,6 @@ function Companies() {
                 </p>
 
               </div>
-
               <div className="mt-6 space-y-4">
                 <div>
                   <h3 className="font-semibold dark:text-white">
