@@ -343,7 +343,6 @@ function Companies() {
                 </div>
 
               </div>
-
             </div>
           </div>
         )}
