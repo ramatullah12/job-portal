@@ -46,12 +46,17 @@ function JobDetail() {
     );
   }
 
-  const alreadyApplied = applications.some(
-    (item) => item.slug === job.slug
-  );
+  const alreadyApplied =
+    applications.some(
+      (item) =>
+        item.slug === job.slug
+    );
 
   const handleApply = () => {
     applyJob(job);
+    alert(
+      "Application submitted successfully!"
+    );
   };
 
   const handleSave = () => {
@@ -59,13 +64,25 @@ function JobDetail() {
     alert("Job saved successfully!");
   };
 
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(
+        window.location.href
+      );
+
+      alert("Job link copied!");
+    } catch {
+      alert("Unable to copy link");
+    }
+  };
+
   return (
     <>
       <Navbar />
 
-      <main className="bg-slate-50 dark:bg-slate-900 min-h-screen transition-colors duration-300">
+      <main className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
 
-        <div className="max-w-5xl mx-auto px-6 py-12">
+        <div className="max-w-6xl mx-auto px-6 py-12">
 
           <Link
             to="/jobs"
@@ -74,23 +91,24 @@ function JobDetail() {
             ← Back to Jobs
           </Link>
 
-          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 shadow-lg rounded-2xl p-8 mt-6">
+          <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-lg p-8 mt-6">
 
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+            <div className="flex flex-col lg:flex-row lg:justify-between gap-8">
 
               <div>
 
-                <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
-                  {job.job_types?.[0] || "Job"}
+                <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium">
+                  {job.job_types?.[0] ||
+                    "Job"}
                 </span>
 
-                <h1 className="text-4xl font-bold text-slate-900 dark:text-white mt-4">
+                <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-4">
                   {job.title}
                 </h1>
 
-                <p className="text-lg text-gray-700 dark:text-gray-300 mt-3">
-                  {job.company_name}
+                <p className="text-xl text-gray-700 dark:text-gray-300 mt-4">
+                  🏢 {job.company_name}
                 </p>
 
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
@@ -99,15 +117,39 @@ function JobDetail() {
 
               </div>
 
+              <div className="bg-slate-100 dark:bg-slate-700 p-6 rounded-2xl min-w-[250px]">
+
+                <h3 className="font-bold text-slate-900 dark:text-white mb-4">
+                  Job Overview
+                </h3>
+
+                <div className="space-y-3">
+
+                  <p className="dark:text-gray-300">
+                    💼 {job.job_types?.[0]}
+                  </p>
+
+                  <p className="dark:text-gray-300">
+                    📍 {job.location}
+                  </p>
+
+                  <p className="dark:text-gray-300">
+                    🏢 {job.company_name}
+                  </p>
+
+                </div>
+
+              </div>
+
             </div>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4 mt-8">
+            {/* Actions */}
+            <div className="flex flex-wrap gap-4 mt-10">
 
               <button
                 onClick={handleApply}
                 disabled={alreadyApplied}
-                className={`px-6 py-3 rounded-xl text-white transition ${
+                className={`px-6 py-3 rounded-xl text-white font-medium transition ${
                   alreadyApplied
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-green-600 hover:bg-green-700"
@@ -125,6 +167,13 @@ function JobDetail() {
                 Save Job
               </button>
 
+              <button
+                onClick={handleShare}
+                className="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition"
+              >
+                Share Job
+              </button>
+
               <a
                 href={job.url}
                 target="_blank"
@@ -136,68 +185,82 @@ function JobDetail() {
 
             </div>
 
-            {/* Description */}
-            <div className="mt-10">
+            {/* Status */}
+            {alreadyApplied && (
+              <div className="mt-6 bg-green-100 text-green-700 px-5 py-4 rounded-xl">
+                ✅ You have already applied for this job.
+              </div>
+            )}
 
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
+            {/* Description */}
+            <div className="mt-12">
+
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
                 Job Description
               </h2>
 
               <div
-                className="prose dark:prose-invert max-w-none"
+                className="
+                  text-slate-700
+                  dark:text-slate-300
+                  leading-8
+                  text-base
+                  space-y-4
+                "
                 dangerouslySetInnerHTML={{
-                  __html: job.description,
+                  __html:
+                    job.description,
                 }}
               />
 
             </div>
 
             {/* Job Information */}
-            <div className="mt-10 border-t border-gray-200 dark:border-slate-700 pt-8">
+            <div className="mt-12 border-t border-gray-200 dark:border-slate-700 pt-8">
 
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
                 Job Information
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
 
-                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
-                  <p className="font-semibold dark:text-white">
+                <div className="bg-slate-100 dark:bg-slate-700 p-5 rounded-xl">
+                  <p className="font-semibold text-slate-900 dark:text-white">
                     Company
                   </p>
 
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">
                     {job.company_name}
                   </p>
                 </div>
 
-                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
-                  <p className="font-semibold dark:text-white">
+                <div className="bg-slate-100 dark:bg-slate-700 p-5 rounded-xl">
+                  <p className="font-semibold text-slate-900 dark:text-white">
                     Location
                   </p>
 
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">
                     {job.location}
                   </p>
                 </div>
 
-                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
-                  <p className="font-semibold dark:text-white">
+                <div className="bg-slate-100 dark:bg-slate-700 p-5 rounded-xl">
+                  <p className="font-semibold text-slate-900 dark:text-white">
                     Job Type
                   </p>
 
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">
                     {job.job_types?.[0] ||
                       "Not Specified"}
                   </p>
                 </div>
 
-                <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
-                  <p className="font-semibold dark:text-white">
+                <div className="bg-slate-100 dark:bg-slate-700 p-5 rounded-xl">
+                  <p className="font-semibold text-slate-900 dark:text-white">
                     Work Mode
                   </p>
 
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">
                     Remote Available
                   </p>
                 </div>
@@ -205,15 +268,6 @@ function JobDetail() {
               </div>
 
             </div>
-
-            {/* Application Status */}
-            {alreadyApplied && (
-              <div className="mt-8 bg-green-100 text-green-700 px-5 py-4 rounded-xl">
-
-                ✅ You have already applied for this job.
-
-              </div>
-            )}
 
           </div>
 
