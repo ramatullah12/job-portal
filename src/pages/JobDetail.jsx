@@ -279,5 +279,4 @@ function JobDetail() {
     </>
   );
 }
-
 export default JobDetail;
