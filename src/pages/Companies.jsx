@@ -316,12 +316,10 @@ function Companies() {
                     {selectedCompany.description}
                   </p>
                 </div>
-
                 <div>
                   <h3 className="font-semibold dark:text-white">
                     Open Jobs
                   </h3>
-
                   <p className="text-blue-600 font-semibold mt-2">
                     {selectedCompany.jobs}
                   </p>
