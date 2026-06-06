@@ -271,7 +271,6 @@ function Companies() {
             )}
 
           </div>
-
         </div>
         {/* Modal */}
         {selectedCompany && (
