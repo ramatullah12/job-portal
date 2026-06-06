@@ -302,7 +302,6 @@ function Companies() {
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
                   {selectedCompany.industry}
                 </p>
-
               </div>
               <div className="mt-6 space-y-4">
                 <div>
