@@ -294,7 +294,6 @@ function Companies() {
                 <div className="text-6xl mb-4">
                   {selectedCompany.logo}
                 </div>
-
                 <h2 className="text-3xl font-bold dark:text-white">
                   {selectedCompany.name}
                 </h2>
