@@ -341,7 +341,6 @@ function Companies() {
                     Visit Website
                   </a>
                 </div>
-
               </div>
             </div>
           </div>
