@@ -288,7 +288,6 @@ function Companies() {
               >
                 ✕
               </button>
-
               <div className="text-center">
                 <div className="text-6xl mb-4">
                   {selectedCompany.logo}
