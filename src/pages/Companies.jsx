@@ -279,7 +279,6 @@ function Companies() {
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
 
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 max-w-lg w-full relative">
-
               <button
                 onClick={() =>
                   setSelectedCompany(null)
