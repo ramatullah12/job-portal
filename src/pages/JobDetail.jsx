@@ -268,7 +268,6 @@ function JobDetail() {
               </div>
 
             </div>
-
           </div>
         </div>
       </main>
