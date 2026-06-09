@@ -259,7 +259,6 @@ function JobDetail() {
                   <p className="font-semibold text-slate-900 dark:text-white">
                     Work Mode
                   </p>
-
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
                     Remote Available
                   </p>
