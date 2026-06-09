@@ -223,7 +223,6 @@ function JobDetail() {
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-
                 <div className="bg-slate-100 dark:bg-slate-700 p-5 rounded-xl">
                   <p className="font-semibold text-slate-900 dark:text-white">
                     Company
