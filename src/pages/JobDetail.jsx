@@ -254,7 +254,6 @@ function JobDetail() {
                       "Not Specified"}
                   </p>
                 </div>
-
                 <div className="bg-slate-100 dark:bg-slate-700 p-5 rounded-xl">
                   <p className="font-semibold text-slate-900 dark:text-white">
                     Work Mode
