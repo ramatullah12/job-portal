@@ -274,7 +274,6 @@ function JobDetail() {
         </div>
 
       </main>
-
       <Footer />
     </>
   );
