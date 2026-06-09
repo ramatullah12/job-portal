@@ -238,7 +238,6 @@ function JobDetail() {
                   <p className="font-semibold text-slate-900 dark:text-white">
                     Location
                   </p>
-
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
                     {job.location}
                   </p>
