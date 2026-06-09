@@ -264,7 +264,6 @@ function JobDetail() {
                     Remote Available
                   </p>
                 </div>
-
               </div>
             </div>
           </div>
