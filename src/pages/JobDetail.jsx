@@ -212,7 +212,6 @@ function JobDetail() {
                     job.description,
                 }}
               />
-
             </div>
             {/* Job Information */}
             <div className="mt-12 border-t border-gray-200 dark:border-slate-700 pt-8">
