@@ -132,7 +132,6 @@ function JobDetail() {
                   <p className="dark:text-gray-300">
                     📍 {job.location}
                   </p>
-
                   <p className="dark:text-gray-300">
                     🏢 {job.company_name}
                   </p>
