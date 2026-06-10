@@ -83,7 +83,6 @@ function JobDetail() {
       <main className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
 
         <div className="max-w-6xl mx-auto px-6 py-12">
-
           <Link
             to="/jobs"
             className="text-blue-600 hover:underline"
