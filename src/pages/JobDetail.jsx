@@ -184,7 +184,6 @@ function JobDetail() {
               </a>
 
             </div>
-
             {/* Status */}
             {alreadyApplied && (
               <div className="mt-6 bg-green-100 text-green-700 px-5 py-4 rounded-xl">
