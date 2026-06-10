@@ -124,7 +124,6 @@ function JobDetail() {
                 </h3>
 
                 <div className="space-y-3">
-
                   <p className="dark:text-gray-300">
                     💼 {job.job_types?.[0]}
                   </p>
