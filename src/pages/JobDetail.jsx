@@ -110,7 +110,6 @@ function JobDetail() {
                 <p className="text-xl text-gray-700 dark:text-gray-300 mt-4">
                   🏢 {job.company_name}
                 </p>
-
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
                   📍 {job.location}
                 </p>
