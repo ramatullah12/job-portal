@@ -128,7 +128,6 @@ function JobDetail() {
                   <p className="dark:text-gray-300">
                     💼 {job.job_types?.[0]}
                   </p>
-
                   <p className="dark:text-gray-300">
                     📍 {job.location}
                   </p>
