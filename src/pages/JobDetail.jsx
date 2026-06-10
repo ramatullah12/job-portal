@@ -140,7 +140,6 @@ function JobDetail() {
                 </div>
 
               </div>
-
             </div>
             {/* Actions */}
             <div className="flex flex-wrap gap-4 mt-10">
