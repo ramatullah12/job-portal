@@ -145,7 +145,6 @@ function JobDetail() {
 
             {/* Actions */}
             <div className="flex flex-wrap gap-4 mt-10">
-
               <button
                 onClick={handleApply}
                 disabled={alreadyApplied}
