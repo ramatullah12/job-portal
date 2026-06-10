@@ -159,7 +159,6 @@ function JobDetail() {
                   ? "Already Applied"
                   : "Apply Job"}
               </button>
-
               <button
                 onClick={handleSave}
                 className="bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 transition"
