@@ -92,7 +92,6 @@ function JobDetail() {
           </Link>
 
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-lg p-8 mt-6">
-
             {/* Header */}
             <div className="flex flex-col lg:flex-row lg:justify-between gap-8">
               <div>
