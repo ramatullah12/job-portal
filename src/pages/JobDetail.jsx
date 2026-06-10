@@ -102,7 +102,6 @@ function JobDetail() {
                   {job.job_types?.[0] ||
                     "Job"}
                 </span>
-
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-4">
                   {job.title}
                 </h1>
