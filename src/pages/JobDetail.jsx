@@ -138,7 +138,6 @@ function JobDetail() {
                   </p>
 
                 </div>
-
               </div>
             </div>
             {/* Actions */}
