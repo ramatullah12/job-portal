@@ -118,7 +118,6 @@ function JobDetail() {
               </div>
 
               <div className="bg-slate-100 dark:bg-slate-700 p-6 rounded-2xl min-w-[250px]">
-
                 <h3 className="font-bold text-slate-900 dark:text-white mb-4">
                   Job Overview
                 </h3>
