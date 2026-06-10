@@ -106,7 +106,6 @@ function JobDetail() {
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-4">
                   {job.title}
                 </h1>
-
                 <p className="text-xl text-gray-700 dark:text-gray-300 mt-4">
                   🏢 {job.company_name}
                 </p>
