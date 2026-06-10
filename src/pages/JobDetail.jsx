@@ -173,7 +173,6 @@ function JobDetail() {
               >
                 Share Job
               </button>
-
               <a
                 href={job.url}
                 target="_blank"
