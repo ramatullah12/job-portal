@@ -166,7 +166,6 @@ function JobDetail() {
               >
                 Save Job
               </button>
-
               <button
                 onClick={handleShare}
                 className="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition"
