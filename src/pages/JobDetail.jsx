@@ -122,7 +122,6 @@ function JobDetail() {
                 <h3 className="font-bold text-slate-900 dark:text-white mb-4">
                   Job Overview
                 </h3>
-
                 <div className="space-y-3">
                   <p className="dark:text-gray-300">
                     💼 {job.job_types?.[0]}
