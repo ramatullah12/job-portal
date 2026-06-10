@@ -97,7 +97,6 @@ function JobDetail() {
             <div className="flex flex-col lg:flex-row lg:justify-between gap-8">
 
               <div>
-
                 <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium">
                   {job.job_types?.[0] ||
                     "Job"}
