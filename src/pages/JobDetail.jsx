@@ -182,7 +182,6 @@ function JobDetail() {
               >
                 Official Apply
               </a>
-
             </div>
             {/* Status */}
             {alreadyApplied && (
