@@ -184,7 +184,6 @@ function About() {
         </div>
 
       </main>
-
       <Footer />
     </>
   );
