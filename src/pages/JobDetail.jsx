@@ -25,7 +25,6 @@ function JobDetail() {
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Job Not Found
             </h1>
-
             <p className="text-gray-500 dark:text-gray-400 mb-6">
               The job information is unavailable or expired.
             </p>
