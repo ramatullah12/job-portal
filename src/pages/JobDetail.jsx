@@ -58,7 +58,6 @@ function JobDetail() {
       "Application submitted successfully!"
     );
   };
-
   const handleSave = () => {
     addBookmark(job);
     alert("Job saved successfully!");
