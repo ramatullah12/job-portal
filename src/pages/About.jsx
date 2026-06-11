@@ -178,7 +178,6 @@ function About() {
               </span>
 
             </div>
-
           </div>
         </div>
       </main>
