@@ -38,7 +38,6 @@ function JobDetail() {
             </Link>
 
           </div>
-
         </div>
         <Footer />
       </>
