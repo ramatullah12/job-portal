@@ -51,7 +51,6 @@ function JobDetail() {
       (item) =>
         item.slug === job.slug
     );
-
   const handleApply = () => {
     applyJob(job);
     alert(
