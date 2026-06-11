@@ -69,7 +69,6 @@ function JobDetail() {
       await navigator.clipboard.writeText(
         window.location.href
       );
-
       alert("Job link copied!");
     } catch {
       alert("Unable to copy link");
