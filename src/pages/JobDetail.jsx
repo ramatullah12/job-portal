@@ -36,7 +36,6 @@ function JobDetail() {
             >
               Back to Jobs
             </Link>
-
           </div>
         </div>
         <Footer />
