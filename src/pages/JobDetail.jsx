@@ -45,7 +45,6 @@ function JobDetail() {
       </>
     );
   }
-
   const alreadyApplied =
     applications.some(
       (item) =>
