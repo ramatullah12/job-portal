@@ -183,7 +183,6 @@ function Login() {
             <p className="text-gray-500 dark:text-gray-400">
               Don't have an account?
             </p>
-
             <Link
               to="/register"
               className="text-blue-600 hover:text-blue-700 font-medium"
