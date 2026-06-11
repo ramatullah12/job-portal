@@ -192,7 +192,6 @@ function Login() {
             </Link>
 
           </div>
-
         </div>
       </main>
       <Footer />
