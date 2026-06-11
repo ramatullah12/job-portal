@@ -21,7 +21,6 @@ function JobDetail() {
         <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
 
           <div className="text-center">
-
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Job Not Found
             </h1>
