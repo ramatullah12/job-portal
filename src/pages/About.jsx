@@ -180,7 +180,6 @@ function About() {
             </div>
 
           </div>
-
         </div>
       </main>
       <Footer />
