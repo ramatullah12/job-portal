@@ -63,7 +63,6 @@ function JobDetail() {
     addBookmark(job);
     alert("Job saved successfully!");
   };
-
   const handleShare = async () => {
     try {
       await navigator.clipboard.writeText(
