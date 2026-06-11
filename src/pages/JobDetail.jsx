@@ -40,7 +40,6 @@ function JobDetail() {
           </div>
 
         </div>
-
         <Footer />
       </>
     );
