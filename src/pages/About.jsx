@@ -20,7 +20,6 @@ function About() {
           </div>
           {/* Mission & Vision */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-
             <div
               className="
                 bg-white
