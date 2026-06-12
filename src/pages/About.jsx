@@ -141,7 +141,6 @@ function About() {
               <span className="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full font-medium">
                 JavaScript
               </span>
-
               <span className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-medium">
                 React Router
               </span>
