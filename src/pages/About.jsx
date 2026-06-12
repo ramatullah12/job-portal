@@ -112,9 +112,7 @@ function About() {
                   Career Tracking
                 </h3>
               </div>
-
             </div>
-
           </div>
 
           {/* Technology Stack */}
