@@ -135,7 +135,6 @@ function About() {
               <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full font-medium">
                 React
               </span>
-
               <span className="bg-cyan-100 text-cyan-600 px-4 py-2 rounded-full font-medium">
                 Tailwind CSS
               </span>
