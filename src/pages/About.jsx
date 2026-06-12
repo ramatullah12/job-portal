@@ -88,7 +88,6 @@ function About() {
               What CareerHub Offers
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
               <div className="text-center">
                 <div className="text-4xl mb-3">💼</div>
                 <h3 className="font-semibold text-slate-900 dark:text-white">
