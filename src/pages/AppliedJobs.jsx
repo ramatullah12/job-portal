@@ -106,7 +106,6 @@ function AppliedJobs() {
               <div className="text-7xl mb-4">
                 📄
               </div>
-
               <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
                 No Applications Yet
               </h2>
