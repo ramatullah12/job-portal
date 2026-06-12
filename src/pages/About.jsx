@@ -68,7 +68,6 @@ function About() {
                 and grow together.
               </p>
             </div>
-
           </div>
 
           {/* Features */}
