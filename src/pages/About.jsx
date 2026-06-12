@@ -62,7 +62,6 @@ function About() {
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
                 Our Vision
               </h2>
-
               <p className="text-gray-600 dark:text-gray-300 leading-7">
                 To become one of the leading career platforms where
                 professionals and companies can connect, collaborate,
