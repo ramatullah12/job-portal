@@ -39,7 +39,6 @@ function AppliedJobs() {
               <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
                 Applied Jobs
               </h1>
-
               <p className="mt-3 text-gray-500 dark:text-gray-400">
                 Track and manage all jobs you have applied for.
               </p>
