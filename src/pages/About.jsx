@@ -114,7 +114,6 @@ function About() {
               </div>
             </div>
           </div>
-
           {/* Technology Stack */}
           <div
             className="
