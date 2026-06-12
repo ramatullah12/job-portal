@@ -132,7 +132,6 @@ function About() {
               Technology Stack
             </h2>
             <div className="flex flex-wrap gap-4">
-
               <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full font-medium">
                 React
               </span>
