@@ -44,7 +44,6 @@ function About() {
                 experience, and career goals.
               </p>
             </div>
-
             <div
               className="
                 bg-white
