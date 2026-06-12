@@ -138,7 +138,6 @@ function About() {
               <span className="bg-cyan-100 text-cyan-600 px-4 py-2 rounded-full font-medium">
                 Tailwind CSS
               </span>
-
               <span className="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full font-medium">
                 JavaScript
               </span>
