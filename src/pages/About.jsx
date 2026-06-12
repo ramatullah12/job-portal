@@ -154,7 +154,6 @@ function About() {
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
               Technology Stack
             </h2>
-
             <div className="flex flex-wrap gap-4">
 
               <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full font-medium">
