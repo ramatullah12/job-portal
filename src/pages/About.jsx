@@ -9,7 +9,6 @@ function About() {
         <div className="max-w-6xl mx-auto px-6 py-12">
           {/* Hero Section */}
           <div className="text-center mb-16">
-
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
               About CareerHub
             </h1>
