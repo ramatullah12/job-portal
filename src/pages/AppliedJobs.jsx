@@ -67,7 +67,6 @@ function AppliedJobs() {
               <h3 className="text-gray-500 dark:text-gray-400">
                 Total Applications
               </h3>
-
               <p className="text-4xl font-bold text-blue-600 mt-2">
                 {applications.length}
               </p>
