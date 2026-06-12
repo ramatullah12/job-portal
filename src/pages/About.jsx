@@ -38,7 +38,6 @@ function About() {
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
                 Our Mission
               </h2>
-
               <p className="text-gray-600 dark:text-gray-300 leading-7">
                 To simplify the job search process and help job seekers
                 discover opportunities that match their skills,
