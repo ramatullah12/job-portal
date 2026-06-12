@@ -76,7 +76,6 @@ function AppliedJobs() {
               <h3 className="text-gray-500 dark:text-gray-400">
                 Pending
               </h3>
-
               <p className="text-4xl font-bold text-yellow-500 mt-2">
                 {pendingApplications}
               </p>
