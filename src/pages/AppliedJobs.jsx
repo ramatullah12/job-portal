@@ -36,7 +36,6 @@ function AppliedJobs() {
           {/* Header */}
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-10">
             <div>
-
               <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
                 Applied Jobs
               </h1>
