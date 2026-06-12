@@ -133,7 +133,6 @@ function AppliedJobs() {
                 >
 
                   <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
-
                     <div>
 
                       <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
