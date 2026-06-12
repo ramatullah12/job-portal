@@ -112,7 +112,6 @@ function AppliedJobs() {
               <p className="text-gray-500 dark:text-gray-400 mt-3">
                 Start applying for jobs and your application history will appear here.
               </p>
-
             </div>
           ) : (
             <div className="grid gap-6">
