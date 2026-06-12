@@ -12,7 +12,6 @@ function About() {
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
               About CareerHub
             </h1>
-
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               CareerHub is a modern job portal platform that connects
               talented professionals with world-class companies and
