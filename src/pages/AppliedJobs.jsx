@@ -94,7 +94,6 @@ function AppliedJobs() {
               <h3 className="text-gray-500 dark:text-gray-400">
                 Rejected
               </h3>
-
               <p className="text-4xl font-bold text-red-600 mt-2">
                 {rejectedApplications}
               </p>
