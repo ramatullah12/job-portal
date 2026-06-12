@@ -59,7 +59,6 @@ function About() {
               <div className="text-5xl mb-4">
                 🚀
               </div>
-
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
                 Our Vision
               </h2>
