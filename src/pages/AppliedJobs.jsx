@@ -60,7 +60,6 @@ function AppliedJobs() {
                 Clear All Applications
               </button>
             )}
-
           </div>
 
           {/* Statistics */}
