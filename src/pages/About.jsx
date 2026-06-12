@@ -17,7 +17,6 @@ function About() {
               talented professionals with world-class companies and
               helps users build successful careers.
             </p>
-
           </div>
 
           {/* Mission & Vision */}
