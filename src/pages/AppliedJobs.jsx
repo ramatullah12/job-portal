@@ -33,7 +33,6 @@ function AppliedJobs() {
       <Navbar />
       <main className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 py-10">
-
           {/* Header */}
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-10">
 
