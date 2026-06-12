@@ -100,7 +100,6 @@ function About() {
                   Save Jobs
                 </h3>
               </div>
-
               <div className="text-center">
                 <div className="text-4xl mb-3">📄</div>
                 <h3 className="font-semibold text-slate-900 dark:text-white">
