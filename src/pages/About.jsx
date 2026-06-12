@@ -144,7 +144,6 @@ function About() {
               <span className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-medium">
                 React Router
               </span>
-
               <span className="bg-green-100 text-green-600 px-4 py-2 rounded-full font-medium">
                 Local Storage
               </span>
