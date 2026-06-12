@@ -98,7 +98,6 @@ function AppliedJobs() {
                 {rejectedApplications}
               </p>
             </div>
-
           </div>
 
           {/* Empty State */}
