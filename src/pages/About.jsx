@@ -18,7 +18,6 @@ function About() {
               helps users build successful careers.
             </p>
           </div>
-
           {/* Mission & Vision */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
 
