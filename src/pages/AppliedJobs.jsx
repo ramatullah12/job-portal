@@ -97,7 +97,6 @@ function AppliedJobs() {
               <p className="text-4xl font-bold text-red-600 mt-2">
                 {rejectedApplications}
               </p>
-
             </div>
 
           </div>
