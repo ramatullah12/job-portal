@@ -137,7 +137,6 @@ function AppliedJobs() {
                       <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
                         {job.title}
                       </h2>
-
                       <p className="text-gray-600 dark:text-gray-300 mt-2">
                         🏢 {job.company_name}
                       </p>
