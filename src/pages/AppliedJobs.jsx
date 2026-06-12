@@ -42,7 +42,6 @@ function AppliedJobs() {
               <p className="mt-3 text-gray-500 dark:text-gray-400">
                 Track and manage all jobs you have applied for.
               </p>
-
             </div>
 
             {applications.length > 0 && (
