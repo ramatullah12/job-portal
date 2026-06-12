@@ -64,7 +64,6 @@ function AppliedJobs() {
           {/* Statistics */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6 border border-gray-200 dark:border-slate-700">
-
               <h3 className="text-gray-500 dark:text-gray-400">
                 Total Applications
               </h3>
