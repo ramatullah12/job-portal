@@ -115,7 +115,6 @@ function AppliedJobs() {
             </div>
           ) : (
             <div className="grid gap-6">
-
               {applications.map((job) => (
                 <div
                   key={job.slug || job.id}
