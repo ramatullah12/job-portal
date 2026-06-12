@@ -84,7 +84,6 @@ function About() {
               mb-12
             "
           >
-
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
               What CareerHub Offers
             </h2>
