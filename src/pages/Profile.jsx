@@ -267,7 +267,6 @@ function Profile() {
                       ? "Almost Complete"
                       : "Incomplete"}
                   </span>
-
                 </div>
                 <div className="w-full mt-6">
                   <div className="flex justify-between mb-2">
