@@ -248,7 +248,6 @@ function Profile() {
                 </p>
 
                 <div className="mt-3">
-
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       completion >=
