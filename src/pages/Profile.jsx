@@ -382,7 +382,6 @@ function Profile() {
                 >
                   Save Profile
                 </button>
-
                 <button
                   type="button"
                   onClick={
