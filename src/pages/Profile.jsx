@@ -241,7 +241,6 @@ function Profile() {
                   {profile.fullName ||
                     "Your Name"}
                 </h2>
-
                 <p className="text-gray-500 dark:text-gray-400">
                   {profile.email ||
                     "your@email.com"}
