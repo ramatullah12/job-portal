@@ -359,7 +359,6 @@ function Profile() {
                   {profile.skills ||
                     "-"}
                 </p>
-
               </div>
             </div>
             {/* Form */}
