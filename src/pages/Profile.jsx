@@ -316,7 +316,6 @@ function Profile() {
               <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
                 Resume
               </h3>
-
               <input
                 type="file"
                 accept=".pdf"
