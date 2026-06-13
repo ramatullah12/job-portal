@@ -361,7 +361,6 @@ function Profile() {
                 </p>
 
               </div>
-
             </div>
             {/* Form */}
             <div className="lg:col-span-2">
