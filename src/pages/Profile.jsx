@@ -347,7 +347,6 @@ function Profile() {
                   {profile.location ||
                     "-"}
                 </p>
-
                 <p className="dark:text-gray-300">
                   📞{" "}
                   {profile.phone ||
