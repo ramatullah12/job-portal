@@ -301,7 +301,6 @@ function Profile() {
                   <h3 className="font-semibold text-slate-900 dark:text-white">
                     Last Updated
                   </h3>
-
                   <p className="text-sm text-gray-500 dark:text-gray-300 mt-2">
                     {lastUpdated ||
                       "Never"}
