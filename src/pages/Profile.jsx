@@ -293,7 +293,6 @@ function Profile() {
                     />
 
                   </div>
-
                 </div>
 
                 <div className="w-full mt-6 bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
