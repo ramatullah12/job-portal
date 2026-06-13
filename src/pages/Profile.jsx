@@ -277,7 +277,6 @@ function Profile() {
                     <span className="text-sm dark:text-white">
                       Profile Completion
                     </span>
-
                     <span className="text-blue-600 font-semibold">
                       {completion}%
                     </span>
