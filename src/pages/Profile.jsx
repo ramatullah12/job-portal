@@ -375,7 +375,6 @@ function Profile() {
               >
 
                 {/* semua input dan textarea milikmu tetap di sini */}
-
                 <button
                   type="submit"
                   className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
