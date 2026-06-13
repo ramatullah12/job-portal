@@ -297,7 +297,6 @@ function Profile() {
                 </div>
 
                 <div className="w-full mt-6 bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
-
                   <h3 className="font-semibold text-slate-900 dark:text-white">
                     Last Updated
                   </h3>
