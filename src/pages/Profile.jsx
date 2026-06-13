@@ -392,7 +392,6 @@ function Profile() {
                 >
                   Reset Profile
                 </button>
-
               </form>
             </div>
           </div>
