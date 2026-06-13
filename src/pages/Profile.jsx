@@ -335,7 +335,6 @@ function Profile() {
               )}
 
               <hr className="my-6 border-gray-300 dark:border-slate-700" />
-
               <h3 className="font-semibold text-slate-900 dark:text-white mb-3">
                 Quick Info
               </h3>
