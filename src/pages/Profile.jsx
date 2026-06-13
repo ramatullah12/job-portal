@@ -341,7 +341,6 @@ function Profile() {
               </h3>
 
               <div className="space-y-3 text-sm">
-
                 <p className="dark:text-gray-300">
                   📍{" "}
                   {profile.location ||
