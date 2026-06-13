@@ -353,7 +353,6 @@ function Profile() {
                   {profile.phone ||
                     "-"}
                 </p>
-
                 <p className="dark:text-gray-300">
                   💼{" "}
                   {profile.skills ||
