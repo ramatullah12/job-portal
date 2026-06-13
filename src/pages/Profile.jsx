@@ -272,7 +272,6 @@ function Profile() {
                 </div>
 
                 <div className="w-full mt-6">
-
                   <div className="flex justify-between mb-2">
                     <span className="text-sm dark:text-white">
                       Profile Completion
