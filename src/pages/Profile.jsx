@@ -402,7 +402,6 @@ function Profile() {
         </div>
 
       </main>
-
       <Footer />
     </>
   );
