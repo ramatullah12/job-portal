@@ -373,7 +373,6 @@ function Profile() {
                 }
                 className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-8"
               >
-
                 {/* semua input dan textarea milikmu tetap di sini */}
                 <button
                   type="submit"
