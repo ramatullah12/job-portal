@@ -366,7 +366,6 @@ function Profile() {
 
             {/* Form */}
             <div className="lg:col-span-2">
-
               <form
                 onSubmit={
                   handleSubmit
