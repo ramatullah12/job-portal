@@ -325,7 +325,6 @@ function Profile() {
                 }
                 className="text-sm dark:text-white"
               />
-
               {resumeName && (
                 <p className="text-green-600 mt-3 text-sm">
                   Uploaded:
