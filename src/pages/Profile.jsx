@@ -215,7 +215,6 @@ function Profile() {
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6">
 
               <div className="flex flex-col items-center">
-
                 {photo ? (
                   <img
                     src={photo}
