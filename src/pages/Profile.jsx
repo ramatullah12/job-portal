@@ -291,7 +291,6 @@ function Profile() {
                         width: `${completion}%`,
                       }}
                     />
-
                   </div>
                 </div>
 
