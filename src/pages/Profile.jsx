@@ -306,7 +306,6 @@ function Profile() {
                     {lastUpdated ||
                       "Never"}
                   </p>
-
                 </div>
 
               </div>
