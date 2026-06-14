@@ -177,7 +177,6 @@ function Profile() {
         linkedin: "",
         github: "",
       });
-
       setPhoto("");
       setResumeName("");
       setLastUpdated("");
