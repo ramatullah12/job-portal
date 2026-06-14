@@ -196,7 +196,6 @@ function Profile() {
           .length
       ) * 100
     );
-
   return (
     <>
       <Navbar />
