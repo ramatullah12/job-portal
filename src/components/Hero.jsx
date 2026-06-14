@@ -84,7 +84,6 @@ function Hero() {
               <h3 className="text-3xl font-bold text-green-600">
                 500+
               </h3>
-
               <p className="text-gray-500 dark:text-gray-400">
                 Companies
               </p>
