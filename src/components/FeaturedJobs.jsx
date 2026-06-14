@@ -141,7 +141,6 @@ function FeaturedJobs() {
             {/* Pagination */}
             {totalPages > 1 && (
               <div className="flex justify-center gap-2 mt-12 flex-wrap">
-
                 {[...Array(totalPages)].map((_, index) => (
                   <button
                     key={index}
