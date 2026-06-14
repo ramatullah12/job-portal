@@ -269,7 +269,6 @@ function Register() {
             >
               Login Here
             </Link>
-
           </div>
         </div>
       </main>
