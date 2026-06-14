@@ -28,7 +28,6 @@ function Hero() {
 
           {/* Search Box */}
           <div className="mt-8 flex flex-col md:flex-row gap-4">
-
             <input
               type="text"
               placeholder="Search jobs, companies, skills..."
