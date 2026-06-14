@@ -165,7 +165,6 @@ function Profile() {
       localStorage.removeItem(
         "profileUpdatedAt"
       );
-
       setProfile({
         fullName: "",
         email: "",
