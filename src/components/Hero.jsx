@@ -98,7 +98,6 @@ function Hero() {
 
         {/* Right Image */}
         <div className="hidden md:flex justify-center">
-
           <img
             src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900"
             alt="CareerHub"
