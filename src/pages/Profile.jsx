@@ -126,7 +126,6 @@ function Profile() {
       "userName",
       profile.fullName
     );
-
     const updateDate =
       new Date().toLocaleString();
     localStorage.setItem(
