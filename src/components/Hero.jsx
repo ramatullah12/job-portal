@@ -99,7 +99,6 @@ function Hero() {
                 Candidates
               </p>
             </div>
-
           </div>
         </div>
 
