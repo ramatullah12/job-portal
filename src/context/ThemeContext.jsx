@@ -52,6 +52,5 @@ export function useTheme() {
       "useTheme must be used inside ThemeProvider"
     );
   }
-
   return context;
 }
