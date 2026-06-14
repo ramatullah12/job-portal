@@ -85,7 +85,6 @@ function Hero() {
                 Companies
               </p>
             </div>
-
             <div>
               <h3 className="text-3xl font-bold text-purple-600">
                 50K+
