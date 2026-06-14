@@ -258,7 +258,6 @@ function Register() {
 
           {/* Footer */}
           <div className="text-center mt-6">
-
             <p className="text-gray-500 dark:text-gray-400">
               Already have an account?
             </p>
