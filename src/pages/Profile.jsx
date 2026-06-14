@@ -200,7 +200,6 @@ function Profile() {
   return (
     <>
       <Navbar />
-
       <main className="min-h-screen bg-slate-50 dark:bg-slate-900 py-10">
         <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-8">
