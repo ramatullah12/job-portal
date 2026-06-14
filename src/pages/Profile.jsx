@@ -129,7 +129,6 @@ function Profile() {
 
     const updateDate =
       new Date().toLocaleString();
-
     localStorage.setItem(
       "profileUpdatedAt",
       updateDate
