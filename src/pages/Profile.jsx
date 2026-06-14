@@ -106,7 +106,6 @@ function Profile() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (
       !profile.fullName ||
       !profile.email
