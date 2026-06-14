@@ -160,7 +160,6 @@ function FeaturedJobs() {
                     {index + 1}
                   </button>
                 ))}
-
               </div>
             )}
           </>
