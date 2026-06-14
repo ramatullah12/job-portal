@@ -138,7 +138,6 @@ function Profile() {
     setLastUpdated(
       updateDate
     );
-
     alert(
       "Profile saved successfully!"
     );
