@@ -128,7 +128,6 @@ function FeaturedJobs() {
           <>
             {/* Jobs Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
               {currentJobs.map((job) => (
                 <JobCard
                   key={job.slug || job.id}
