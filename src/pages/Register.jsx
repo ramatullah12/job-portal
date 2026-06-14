@@ -273,7 +273,6 @@ function Register() {
           </div>
 
         </div>
-
       </main>
       <Footer />
     </>
