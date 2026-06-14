@@ -262,7 +262,6 @@ function Register() {
             <p className="text-gray-500 dark:text-gray-400">
               Already have an account?
             </p>
-
             <Link
               to="/login"
               className="text-blue-600 hover:text-blue-700 font-medium"
