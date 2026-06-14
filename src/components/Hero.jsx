@@ -69,7 +69,6 @@ function Hero() {
 
           {/* Statistics */}
           <div className="grid grid-cols-3 gap-6 mt-10">
-
             <div>
               <h3 className="text-3xl font-bold text-blue-600">
                 10K+
