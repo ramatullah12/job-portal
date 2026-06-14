@@ -271,7 +271,6 @@ function Register() {
             </Link>
 
           </div>
-
         </div>
       </main>
       <Footer />
