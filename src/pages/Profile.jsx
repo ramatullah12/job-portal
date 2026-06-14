@@ -116,7 +116,6 @@ function Profile() {
       );
       return;
     }
-
     localStorage.setItem(
       "userProfile",
       JSON.stringify(profile)
