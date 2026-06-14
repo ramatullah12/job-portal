@@ -118,7 +118,6 @@ function Hero() {
               object-cover
             "
           />
-
         </div>
       </div>
     </section>
