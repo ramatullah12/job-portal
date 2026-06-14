@@ -77,7 +77,6 @@ function Hero() {
                 Jobs
               </p>
             </div>
-
             <div>
               <h3 className="text-3xl font-bold text-green-600">
                 500+
