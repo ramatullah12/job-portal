@@ -101,7 +101,6 @@ function Hero() {
             </div>
 
           </div>
-
         </div>
 
         {/* Right Image */}
