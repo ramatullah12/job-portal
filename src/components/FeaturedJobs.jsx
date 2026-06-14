@@ -135,7 +135,6 @@ function FeaturedJobs() {
                   job={job}
                 />
               ))}
-
             </div>
 
             {/* Pagination */}
