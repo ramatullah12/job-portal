@@ -134,7 +134,6 @@ function Profile() {
       "profileUpdatedAt",
       updateDate
     );
-
     setLastUpdated(
       updateDate
     );
