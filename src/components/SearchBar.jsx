@@ -40,7 +40,6 @@ function SearchBar({
           py-3
         "
       />
-
       {history.length > 0 && (
         <div
           className="
