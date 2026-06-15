@@ -78,7 +78,6 @@ function Statistics() {
               </p>
             </div>
           ))}
-
         </div>
       </div>
     </section>
