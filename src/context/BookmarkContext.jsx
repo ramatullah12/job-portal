@@ -92,7 +92,6 @@ export function BookmarkProvider({
         job.slug === slug
     );
   };
-
   const totalBookmarks =
     bookmarks.length;
 
