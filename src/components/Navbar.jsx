@@ -6,7 +6,6 @@ import { useNotifications } from "../context/NotificationContext";
 
 function Navbar() {
   const navigate = useNavigate();
-
   const { bookmarks = [] } = useBookmarks();
   const { applications = [] } = useApplications();
   const { notifications = [] } = useNotifications();
