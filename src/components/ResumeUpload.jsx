@@ -22,7 +22,6 @@ function ResumeUpload() {
       <h2 className="text-2xl font-semibold mb-4">
         Resume Upload
       </h2>
-
       <input
         type="file"
         accept=".pdf"
