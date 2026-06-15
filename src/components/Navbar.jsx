@@ -23,7 +23,6 @@ function Navbar() {
     localStorage.removeItem("userEmail");
 
     alert("Logout successful");
-
     navigate("/login");
   };
 
