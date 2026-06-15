@@ -101,7 +101,6 @@ function Navbar() {
                   )}
                 </Link>
               </li>
-
               <li>
                 <Link
                   to="/notifications"
