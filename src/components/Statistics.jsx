@@ -80,7 +80,6 @@ function Statistics() {
           ))}
 
         </div>
-
       </div>
     </section>
   );
