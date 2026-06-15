@@ -71,7 +71,6 @@ function TopCompanies() {
               </h3>
             </div>
           ))}
-
         </div>
       </div>
     </section>
