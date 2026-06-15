@@ -66,7 +66,6 @@ function Statistics() {
               <div className="text-5xl mb-4">
                 {item.icon}
               </div>
-
               <h2
                 className={`text-5xl font-bold ${item.color}`}
               >
