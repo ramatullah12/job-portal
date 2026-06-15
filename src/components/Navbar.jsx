@@ -108,7 +108,6 @@ function Navbar() {
                   className="relative hover:text-blue-600 transition"
                 >
                   Notifications
-
                   {notifications.length > 0 && (
                     <span className="absolute -top-2 -right-5 bg-yellow-500 text-white text-xs px-2 py-0.5 rounded-full">
                       {notifications.length}
