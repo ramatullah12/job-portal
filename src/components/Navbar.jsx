@@ -51,7 +51,6 @@ function Navbar() {
               Home
             </Link>
           </li>
-
           <li>
             <Link
               to="/jobs"
