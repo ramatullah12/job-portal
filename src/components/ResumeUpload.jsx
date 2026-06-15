@@ -5,7 +5,6 @@ function ResumeUpload() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-
     if (file) {
       setFileName(file.name);
       localStorage.setItem(
