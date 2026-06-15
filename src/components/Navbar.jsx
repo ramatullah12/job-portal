@@ -71,7 +71,6 @@ function Navbar() {
                   Dashboard
                 </Link>
               </li>
-
               <li>
                 <Link
                   to="/applications"
