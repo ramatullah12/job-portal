@@ -28,7 +28,6 @@ function ResumeUpload() {
         accept=".pdf"
         onChange={handleFileChange}
       />
-
       {fileName && (
         <p className="mt-4 text-green-600">
           Uploaded: {fileName}
