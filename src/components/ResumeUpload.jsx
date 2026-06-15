@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function ResumeUpload() {
   const [fileName, setFileName] = useState("");
-
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
