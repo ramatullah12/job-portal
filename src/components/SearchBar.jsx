@@ -58,7 +58,6 @@ function SearchBar({
             <h3 className="font-semibold dark:text-white">
               Recent Searches
             </h3>
-
             <button
               onClick={clearHistory}
               className="text-red-500"
