@@ -67,7 +67,6 @@ function SearchBar({
             </button>
 
           </div>
-
           <div className="flex flex-wrap gap-2">
 
             {history.map(
