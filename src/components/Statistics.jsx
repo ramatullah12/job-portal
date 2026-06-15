@@ -72,7 +72,6 @@ function Statistics() {
               >
                 {item.value}
               </h2>
-
               <p className="mt-3 text-lg text-slate-700 dark:text-gray-300">
                 {item.title}
               </p>
