@@ -91,7 +91,6 @@ function SearchBar({
                 </button>
               )
             )}
-
           </div>
         </div>
       )}
