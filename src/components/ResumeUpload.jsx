@@ -34,7 +34,6 @@ function ResumeUpload() {
           Uploaded: {fileName}
         </p>
       )}
-
     </div>
   );
 }
