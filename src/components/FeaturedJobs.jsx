@@ -96,7 +96,6 @@ function FeaturedJobs() {
         <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-4">
           Featured Jobs
         </h2>
-
         <p className="text-center text-gray-500 dark:text-gray-300 mb-10">
           Discover the latest opportunities
         </p>
