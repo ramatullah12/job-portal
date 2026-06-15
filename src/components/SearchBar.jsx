@@ -65,7 +65,6 @@ function SearchBar({
             >
               Clear
             </button>
-
           </div>
           <div className="flex flex-wrap gap-2">
 
