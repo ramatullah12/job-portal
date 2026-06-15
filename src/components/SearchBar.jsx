@@ -54,7 +54,6 @@ function SearchBar({
         >
 
           <div className="flex justify-between mb-3">
-
             <h3 className="font-semibold dark:text-white">
               Recent Searches
             </h3>
