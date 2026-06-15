@@ -78,7 +78,6 @@ function Navbar() {
                   className="relative hover:text-blue-600 transition"
                 >
                   Applications
-
                   {applications.length > 0 && (
                     <span className="absolute -top-2 -right-5 bg-green-600 text-white text-xs px-2 py-0.5 rounded-full">
                       {applications.length}
