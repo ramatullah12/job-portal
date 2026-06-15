@@ -8,7 +8,6 @@ function ResumeUpload() {
 
     if (file) {
       setFileName(file.name);
-
       localStorage.setItem(
         "resumeName",
         file.name
