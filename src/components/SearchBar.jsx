@@ -17,7 +17,6 @@ function SearchBar({
 
   return (
     <div className="mb-10">
-
       <input
         type="text"
         placeholder="Search jobs..."
