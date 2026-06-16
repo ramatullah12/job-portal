@@ -35,7 +35,6 @@ function Statistics() {
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
             CareerHub Statistics
           </h2>
-
           <p className="mt-4 text-gray-600 dark:text-gray-300">
             Trusted by thousands of companies and professionals worldwide
           </p>
