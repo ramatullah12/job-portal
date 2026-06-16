@@ -29,7 +29,6 @@ function Statistics() {
   return (
     <section className="py-20 bg-slate-100 dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
