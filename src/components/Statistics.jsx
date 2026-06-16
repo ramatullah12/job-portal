@@ -43,7 +43,6 @@ function Statistics() {
 
         {/* Stats Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
           {stats.map((item) => (
             <div
               key={item.title}
