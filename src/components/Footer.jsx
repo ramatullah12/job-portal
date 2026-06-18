@@ -74,7 +74,6 @@ function Footer() {
                   Browse Jobs
                 </Link>
               </li>
-
               <li>
                 <Link
                   to="/applications"
