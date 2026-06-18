@@ -121,7 +121,6 @@ function Footer() {
                   Terms of Service
                 </a>
               </li>
-
               <li>
                 <a
                   href="#"
