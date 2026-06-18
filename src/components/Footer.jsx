@@ -144,7 +144,6 @@ function Footer() {
           </p>
 
           <div className="flex gap-4 mt-4 md:mt-0">
-
             <a
               href="#"
               className="text-gray-500 hover:text-blue-600 transition"
