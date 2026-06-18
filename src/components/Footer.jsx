@@ -130,7 +130,6 @@ function Footer() {
                   Cookie Policy
                 </a>
               </li>
-
             </ul>
           </div>
         </div>
