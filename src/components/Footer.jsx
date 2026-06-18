@@ -92,7 +92,6 @@ function Footer() {
                   Dashboard
                 </Link>
               </li>
-
             </ul>
           </div>
           {/* Legal */}
