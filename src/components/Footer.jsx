@@ -142,7 +142,6 @@ function Footer() {
           <p className="text-gray-500 dark:text-gray-400 text-sm">
             © 2026 CareerHub. All rights reserved.
           </p>
-
           <div className="flex gap-4 mt-4 md:mt-0">
             <a
               href="#"
