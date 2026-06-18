@@ -165,7 +165,6 @@ function Footer() {
             >
               GitHub
             </a>
-
           </div>
         </div>
       </div>
