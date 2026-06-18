@@ -95,7 +95,6 @@ function Footer() {
 
             </ul>
           </div>
-
           {/* Legal */}
           <div>
             <h3 className="font-semibold text-slate-900 dark:text-white mb-4">
