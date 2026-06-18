@@ -83,7 +83,6 @@ function Footer() {
                   Applications
                 </Link>
               </li>
-
               <li>
                 <Link
                   to="/dashboard"
