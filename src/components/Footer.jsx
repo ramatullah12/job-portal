@@ -112,7 +112,6 @@ function Footer() {
                   Privacy Policy
                 </a>
               </li>
-
               <li>
                 <a
                   href="#"
