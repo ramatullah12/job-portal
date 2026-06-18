@@ -151,7 +151,6 @@ function Footer() {
             >
               Facebook
             </a>
-
             <a
               href="#"
               className="text-gray-500 hover:text-blue-600 transition"
