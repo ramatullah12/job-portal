@@ -65,7 +65,6 @@ function Footer() {
             </h3>
 
             <ul className="space-y-3 text-gray-600 dark:text-gray-400">
-
               <li>
                 <Link
                   to="/jobs"
