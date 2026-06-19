@@ -45,7 +45,6 @@ function JobCard({ job }) {
       <h3 className="text-xl font-bold mt-4 text-slate-900 dark:text-white">
         {job.title}
       </h3>
-
       <p className="text-gray-700 dark:text-gray-300 mt-2">
         🏢 {job.company_name || "Unknown Company"}
       </p>
