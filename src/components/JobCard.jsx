@@ -96,7 +96,6 @@ function JobCard({ job }) {
         >
           ❤️
         </button>
-
       </div>
     </div>
   );
