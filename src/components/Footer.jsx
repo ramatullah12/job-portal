@@ -54,7 +54,6 @@ function Footer() {
                   Careers
                 </Link>
               </li>
-
             </ul>
           </div>
 
