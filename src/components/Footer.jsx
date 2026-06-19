@@ -45,7 +45,6 @@ function Footer() {
                   Companies
                 </Link>
               </li>
-
               <li>
                 <Link
                   to="/jobs"
