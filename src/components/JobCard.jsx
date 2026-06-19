@@ -61,7 +61,6 @@ function JobCard({ job }) {
 
       {/* Buttons */}
       <div className="flex gap-2">
-
         <Link
           to={`/jobs/${job.slug}`}
           state={{ job }}
