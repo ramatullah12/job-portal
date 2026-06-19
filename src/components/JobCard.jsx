@@ -50,7 +50,6 @@ function JobCard({ job }) {
       <p className="text-gray-700 dark:text-gray-300 mt-2">
         🏢 {job.company_name || "Unknown Company"}
       </p>
-
       <p className="text-gray-500 dark:text-gray-400 mt-1">
         📍 {job.location || "Remote"}
       </p>
