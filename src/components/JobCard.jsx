@@ -58,7 +58,6 @@ function JobCard({ job }) {
 
       {/* Divider */}
       <div className="border-t dark:border-slate-700 my-5"></div>
-
       <div className="flex gap-2">
         <Link
           to={`/jobs/${job.slug}`}
