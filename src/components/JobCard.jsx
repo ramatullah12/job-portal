@@ -79,7 +79,6 @@ function JobCard({ job }) {
         >
           View Details
         </Link>
-
         <button
           onClick={handleBookmark}
           className="
