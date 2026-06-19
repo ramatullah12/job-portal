@@ -55,7 +55,6 @@ function JobCard({ job }) {
       <p className="text-gray-500 dark:text-gray-400 mt-1">
         📍 {job.location || "Remote"}
       </p>
-
       <div className="border-t dark:border-slate-700 my-5"></div>
       <div className="flex gap-2">
         <Link
