@@ -30,7 +30,7 @@ function JobCategories() {
     <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
 
-  
+
         <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-4">
           Browse By Category
         </h2>
