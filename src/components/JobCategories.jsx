@@ -78,5 +78,4 @@ function JobCategories() {
     </section>
   );
 }
-
 export default JobCategories;
