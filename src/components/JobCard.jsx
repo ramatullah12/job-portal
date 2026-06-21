@@ -3,7 +3,6 @@ import { useBookmarks } from "../context/BookmarkContext";
 
 function JobCard({ job }) {
   const { addBookmark } = useBookmarks();
-
   const handleBookmark = () => {
     addBookmark(job);
   };
