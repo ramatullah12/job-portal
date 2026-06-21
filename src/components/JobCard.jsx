@@ -41,7 +41,7 @@ function JobCard({ job }) {
         {job.job_types?.[0] || "Full Time"}
       </span>
 
-  
+
       <h3 className="text-xl font-bold mt-4 text-slate-900 dark:text-white">
         {job.title}
       </h3>
