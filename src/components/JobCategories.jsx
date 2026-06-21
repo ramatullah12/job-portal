@@ -71,7 +71,6 @@ function JobCategories() {
               </h3>
             </div>
           ))}
-
         </div>
       </div>
     </section>
