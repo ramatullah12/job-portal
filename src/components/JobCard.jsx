@@ -25,7 +25,7 @@ function JobCard({ job }) {
         duration-300
       "
     >
-      {/* Job Type */}
+      
       <span
         className="
           inline-block
