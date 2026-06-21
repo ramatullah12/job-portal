@@ -7,7 +7,6 @@ function JobCard({ job }) {
   const handleBookmark = () => {
     addBookmark(job);
   };
-
   return (
     <div
       className="
