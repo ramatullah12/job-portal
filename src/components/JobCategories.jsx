@@ -65,12 +65,11 @@ function JobCategories() {
               <div className="text-4xl mb-3">
                 {category.icon}
               </div>
-
               <h3 className="font-semibold text-slate-900 dark:text-white">
                 {category.name}
               </h3>
             </div>
-          ))}
+          ))} 
         </div>
       </div>
     </section>
