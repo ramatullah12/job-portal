@@ -34,7 +34,6 @@ function JobCategories() {
         <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-4">
           Browse By Category
         </h2>
-
         <p className="text-center text-gray-500 dark:text-gray-300 mb-12">
           Explore jobs from popular categories
         </p>
