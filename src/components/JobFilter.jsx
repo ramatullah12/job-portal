@@ -15,7 +15,7 @@ function JobFilter({ selectedType, setSelectedType }) {
         Filter Job Type
       </h3>
 
-      {/* Filter Buttons */}
+      
       <div className="flex flex-wrap gap-3">
         {types.map((type) => (
           <button
