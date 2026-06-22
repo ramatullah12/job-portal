@@ -153,7 +153,6 @@ function Navbar() {
               <span className="hidden lg:block text-sm text-slate-600 dark:text-slate-300">
                 {userEmail}
               </span>
-
               <Link
                 to="/profile"
                 className="
