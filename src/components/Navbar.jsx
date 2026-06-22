@@ -206,7 +206,6 @@ function Navbar() {
               >
                 Login
               </Link>
-
               <Link
                 to="/register"
                 className="
