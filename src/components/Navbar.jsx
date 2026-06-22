@@ -126,7 +126,6 @@ function Navbar() {
           </li>
 
         </ul>
-
         <div className="flex items-center gap-3">
           <button
             onClick={toggleTheme}
