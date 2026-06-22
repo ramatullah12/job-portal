@@ -130,7 +130,7 @@ function Navbar() {
         {/* Right Menu */}
         <div className="flex items-center gap-3">
 
-          {/* Dark Mode */}
+          
           <button
             onClick={toggleTheme}
             className="
