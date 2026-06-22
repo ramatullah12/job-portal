@@ -171,7 +171,6 @@ function Navbar() {
               >
                 Profile
               </Link>
-
               <button
                 onClick={handleLogout}
                 className="
