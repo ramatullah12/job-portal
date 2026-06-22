@@ -147,7 +147,6 @@ function Navbar() {
           >
             {darkMode ? "☀️" : "🌙"}
           </button>
-
           {isLoggedIn ? (
             <>
               <span className="hidden lg:block text-sm text-slate-600 dark:text-slate-300">
