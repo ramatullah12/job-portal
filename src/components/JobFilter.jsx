@@ -9,7 +9,6 @@ function JobFilter({ selectedType, setSelectedType }) {
 
   return (
     <div className="mb-10">
-
       <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">
         Filter Job Type
       </h3>
