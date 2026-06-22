@@ -40,7 +40,6 @@ function JobFilter({ selectedType, setSelectedType }) {
             {type}
           </button>
         ))}
-
       </div>
     </div>
   );
