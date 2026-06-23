@@ -71,7 +71,6 @@ function AppliedJobs() {
                 {applications.length}
               </p>
             </div>
-
             <div className="bg-white dark:bg-slate-800 rounded-2xl shadow p-6 border border-gray-200 dark:border-slate-700">
               <h3 className="text-gray-500 dark:text-gray-400">
                 Pending
