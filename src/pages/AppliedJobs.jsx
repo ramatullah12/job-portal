@@ -150,7 +150,6 @@ function AppliedJobs() {
                         {" "}
                         {job.appliedAt || "Today"}
                       </p>
-
                     </div>
                     <div className="flex flex-col gap-3">
                       <span
