@@ -35,7 +35,6 @@ function Navbar() {
         >
           CareerHub
         </Link>
-
         <ul className="hidden md:flex items-center gap-8 font-medium text-slate-700 dark:text-white">
           <li>
             <Link
