@@ -199,7 +199,6 @@ function AppliedJobs() {
         </div>
 
       </main>
-
       <Footer />
     </>
   );
