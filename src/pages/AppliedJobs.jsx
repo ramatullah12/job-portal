@@ -144,7 +144,6 @@ function AppliedJobs() {
                       <p className="text-gray-500 dark:text-gray-400 mt-1">
                         📍 {job.location}
                       </p>
-
                       <p className="text-blue-600 mt-2 font-medium">
                         Applied:
                         {" "}
