@@ -166,7 +166,6 @@ function AppliedJobs() {
                       >
                         {job.status || "Pending"}
                       </span>
-
                       <button
                         onClick={() =>
                           removeApplication(
