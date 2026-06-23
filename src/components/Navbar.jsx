@@ -115,7 +115,6 @@ function Navbar() {
               Companies
             </Link>
           </li>
-
           <li>
             <Link
               to="/about"
