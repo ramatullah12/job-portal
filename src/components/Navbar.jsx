@@ -124,7 +124,6 @@ function Navbar() {
               About
             </Link>
           </li>
-
         </ul>
         <div className="flex items-center gap-3">
           <button
