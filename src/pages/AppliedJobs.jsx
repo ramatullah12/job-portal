@@ -185,7 +185,6 @@ function AppliedJobs() {
                       >
                         Remove Application
                       </button>
-
                     </div>
                   </div>
                 </div>
