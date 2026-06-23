@@ -152,7 +152,6 @@ function AppliedJobs() {
                       </p>
 
                     </div>
-
                     <div className="flex flex-col gap-3">
                       <span
                         className={`px-4 py-2 rounded-full text-center font-medium ${
