@@ -71,7 +71,6 @@ function Bookmarks() {
                     job={job}
                   />
                 ))}
-
               </div>
             </>
           )}
