@@ -43,7 +43,6 @@ function AppliedJobs() {
                 Track and manage all jobs you have applied for.
               </p>
             </div>
-
             {applications.length > 0 && (
               <button
                 onClick={clearApplications}
