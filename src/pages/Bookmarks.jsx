@@ -79,7 +79,6 @@ function Bookmarks() {
         </div>
 
       </main>
-
       <Footer />
     </>
   );
