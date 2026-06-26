@@ -8,7 +8,6 @@ import {
 
 function Bookmarks() {
   const { bookmarks } = useBookmarks();
-
   return (
     <>
       <Navbar />
