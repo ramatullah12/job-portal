@@ -17,7 +17,7 @@ function Bookmarks() {
 
         <div className="max-w-7xl mx-auto px-6 py-10">
 
-        
+      
           <div className="mb-10">
             <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
               Saved Jobs
