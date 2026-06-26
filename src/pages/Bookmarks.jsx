@@ -58,7 +58,6 @@ function Bookmarks() {
               <p className="text-gray-500 dark:text-gray-400 mt-3">
                 Start saving jobs to keep track of opportunities.
               </p>
-
             </div>
           ) : (
             <>
