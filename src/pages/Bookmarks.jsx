@@ -27,7 +27,6 @@ function Bookmarks() {
             <p className="mt-3 text-gray-500 dark:text-gray-300">
               Manage and track your favorite job opportunities.
             </p>
-
           </div>
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-6 mb-10">
             <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
