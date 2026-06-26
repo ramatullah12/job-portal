@@ -14,7 +14,6 @@ function Bookmarks() {
       <Navbar />
 
       <main className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-
         <div className="max-w-7xl mx-auto px-6 py-10">
           <div className="mb-10">
             <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
