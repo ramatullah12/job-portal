@@ -5,7 +5,6 @@ import JobCard from "../components/JobCard";
 import {
   useBookmarks,
 } from "../context/BookmarkContext";
-
 function Bookmarks() {
   const { bookmarks } = useBookmarks();
   return (
