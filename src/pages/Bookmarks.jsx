@@ -40,7 +40,6 @@ function Bookmarks() {
             <p className="text-4xl font-bold text-blue-600 mt-3">
               {bookmarks.length}
             </p>
-
           </div>
           {bookmarks.length === 0 ? (
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-12 text-center">
