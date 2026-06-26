@@ -50,7 +50,6 @@ function Bookmarks() {
               <div className="text-6xl mb-4">
                 📂
               </div>
-
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
                 No Saved Jobs Yet
               </h2>
