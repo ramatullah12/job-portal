@@ -43,7 +43,7 @@ function Bookmarks() {
 
           </div>
 
-  
+
           {bookmarks.length === 0 ? (
             <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow p-12 text-center">
               <div className="text-6xl mb-4">
