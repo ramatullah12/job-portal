@@ -36,7 +36,6 @@ function Bookmarks() {
             <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
               Total Saved Jobs
             </h2>
-
             <p className="text-4xl font-bold text-blue-600 mt-3">
               {bookmarks.length}
             </p>
