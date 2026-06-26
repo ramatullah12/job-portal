@@ -23,7 +23,6 @@ function Bookmarks() {
             <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
               Saved Jobs
             </h1>
-
             <p className="mt-3 text-gray-500 dark:text-gray-300">
               Manage and track your favorite job opportunities.
             </p>
