@@ -242,7 +242,6 @@ function Companies() {
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
                     {company.industry}
                   </p>
-
                   <p className="text-blue-600 font-semibold mt-4">
                     {company.jobs} Open Jobs
                   </p>
