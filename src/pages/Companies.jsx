@@ -246,7 +246,6 @@ function Companies() {
                   <p className="text-blue-600 font-semibold mt-4">
                     {company.jobs} Open Jobs
                   </p>
-
                   <button
                     onClick={() =>
                       setSelectedCompany(
