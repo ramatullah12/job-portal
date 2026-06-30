@@ -269,7 +269,6 @@ function Companies() {
                 </div>
               )
             )}
-
           </div>
         </div>
         {/* Modal */}
