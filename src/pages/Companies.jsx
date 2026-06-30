@@ -265,7 +265,6 @@ function Companies() {
                   >
                     View Company
                   </button>
-
                 </div>
               )
             )}
