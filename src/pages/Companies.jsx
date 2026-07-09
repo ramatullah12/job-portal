@@ -230,7 +230,6 @@ function Companies() {
                     transition
                   "
                 >
-
                   <div className="text-5xl mb-4">
                     {company.logo}
                   </div>
