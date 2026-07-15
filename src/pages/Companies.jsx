@@ -210,7 +210,6 @@ function Companies() {
                 </option>
               ))}
             </select>
-
           </div>
 
           {/* Cards */}
