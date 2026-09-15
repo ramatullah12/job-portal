@@ -183,7 +183,6 @@ function Companies() {
                 dark:text-white
               "
             />
-
             <select
               value={industry}
               onChange={(e) =>
