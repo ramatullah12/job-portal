@@ -182,6 +182,7 @@ function Companies() {
                 dark:bg-slate-800
                 dark:text-white
               "
+              
             />
             <select
               value={industry}
