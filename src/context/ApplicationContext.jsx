@@ -19,7 +19,6 @@ export function ApplicationProvider({
         ? JSON.parse(saved)
         : [];
     });
-
   useEffect(() => {
     localStorage.setItem(
       "applications",
