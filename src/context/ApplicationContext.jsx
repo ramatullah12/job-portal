@@ -31,14 +31,12 @@ export function ApplicationProvider({
         (item) =>
           item.slug === job.slug
       );
-
     if (exists) {
       alert(
         "You have already applied for this job."
       );
       return false;
     }
-
     const newApplication = {
       ...job,
       appliedAt:
