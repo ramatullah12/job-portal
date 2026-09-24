@@ -25,7 +25,6 @@ export function ApplicationProvider({
       JSON.stringify(applications)
     );
   }, [applications]);
-
   const applyJob = (job) => {
     const exists =
       applications.find(
