@@ -45,7 +45,7 @@ export function ApplicationProvider({
         ),
       status: "Pending",
     };
-
+new
     setApplications(
       (prev) => [
         ...prev,
