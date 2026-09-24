@@ -15,7 +15,6 @@ export function ApplicationProvider({
         localStorage.getItem(
           "applications"
         );
-
       return saved
         ? JSON.parse(saved)
         : [];
