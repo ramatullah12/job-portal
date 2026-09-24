@@ -45,7 +45,7 @@ export function ApplicationProvider({
         ),
       status: "Pending",
     };
-sudo
+sud
     setApplications(
       (prev) => [
         ...prev,
