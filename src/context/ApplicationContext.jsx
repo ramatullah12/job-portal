@@ -6,7 +6,6 @@ import {
 } from "react";
 
 const ApplicationContext = createContext();
-
 export function ApplicationProvider({
   children,
 }) {
