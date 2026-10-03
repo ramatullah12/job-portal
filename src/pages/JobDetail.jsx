@@ -11,7 +11,6 @@ function JobDetail() {
   const { addBookmark } = useBookmarks();
   const { applyJob, applications } =
     useApplications();
-
   if (!job) {
     return (
       <>
