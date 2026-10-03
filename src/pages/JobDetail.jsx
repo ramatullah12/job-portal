@@ -8,7 +8,6 @@ import { useApplications } from "../context/ApplicationContext";
 function JobDetail() {
   const location = useLocation();
   const job = location.state?.job;
-
   const { addBookmark } = useBookmarks();
   const { applyJob, applications } =
     useApplications();
