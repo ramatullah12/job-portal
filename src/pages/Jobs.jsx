@@ -24,7 +24,6 @@ function Jobs() {
 
           </div>
           <FeaturedJobs />
-
         </div>
 
       </main>
