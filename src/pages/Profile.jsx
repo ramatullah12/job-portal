@@ -87,7 +87,6 @@ function Profile() {
 
     reader.readAsDataURL(file);
   };
-
   const handleResumeChange = (
     e
   ) => {
