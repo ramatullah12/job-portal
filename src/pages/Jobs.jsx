@@ -23,7 +23,6 @@ function Jobs() {
             </p>
 
           </div>
-
           <FeaturedJobs />
 
         </div>
