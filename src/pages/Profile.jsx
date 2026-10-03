@@ -97,13 +97,11 @@ function Profile() {
     if (!file) return;
 
     setResumeName(file.name);
-
     localStorage.setItem(
       "resumeName",
       file.name
     );
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
