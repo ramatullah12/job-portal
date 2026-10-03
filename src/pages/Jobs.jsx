@@ -24,7 +24,7 @@ function Jobs() {
 
           </div>
 
-          {/* Jobs Section */}
+          
           <FeaturedJobs />
 
         </div>
